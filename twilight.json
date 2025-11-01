@@ -1,10 +1,10 @@
 {
     "name": {
-        "ar": "رائد",
-        "en": "Theme Raed"
+        "ar": "نيدز بوكس",
+        "en": "NEEDSBOXES"
     },
-    "repository": "https://github.com/SallaApp/theme-raed",
-    "author_email": "support@salla.sa",
+    "repository": "https://github.com/bakhe8/NEEDSBOXES",
+    "author_email": "support@needsboxes.sa",
     "features": [
         "mega-menu",
         "fonts",

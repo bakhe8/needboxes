@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700;800&family=Inter:wght@400;500;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+/**
+ * NEEDSBOXES brand overrides
+ * Visual-only adjustments that preserve Raed Twig structure.
+ */
+
+html[lang='ar'] {
+  --font-main: var(--brand-font-ar);
+}
+
+html[lang='en'] {
+  --font-main: var(--brand-font-en);
+}
+
+body {
+  font-family: var(--font-main), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--brand-surface);
+  color: var(--brand-ink);
+}
+
+a {
+  color: var(--brand-primary);
+
+  &:hover {
+    color: var(--brand-accent-orange);
+  }
+}
+
+.btn--primary,
+button.btn--primary,
+salla-button[variant='primary'] {
+  background-image: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent-orange) 100%);
+  border: none;
+  box-shadow: var(--brand-shadow-soft);
+}
+
+.btn--outline-primary,
+button.btn--outline-primary {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+
+  &:hover {
+    background: var(--brand-primary);
+    color: var(--brand-primary-contrast);
+  }
+}
+
+.store-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(13, 44, 108, 0.08);
+  box-shadow: var(--brand-shadow-soft);
+
+  .top-navbar {
+    background: transparent;
+    color: var(--brand-muted);
+
+    .btn--rounded-gray,
+    .btn--circle-gray {
+      background: rgba(13, 44, 108, 0.08);
+      color: var(--brand-primary);
+      border: none;
+
+      &:hover {
+        background: rgba(13, 44, 108, 0.12);
+      }
+    }
+
+    .header-buttons button {
+      font-weight: 600;
+    }
+  }
+
+  .main-nav-container {
+    background: transparent;
+
+    .inner {
+      background: #fff;
+      border-radius: var(--brand-radius-md);
+      box-shadow: var(--brand-shadow-soft);
+      border: 1px solid rgba(13, 44, 108, 0.06);
+      padding-inline: 0.5rem;
+    }
+
+    .navbar-brand img {
+      max-height: 52px;
+    }
+
+    .main-menu > li > a {
+      font-weight: 600;
+      color: var(--brand-muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+
+      &:hover,
+      &.is-active {
+        color: var(--brand-primary);
+        transform: translateY(-1px);
+      }
+    }
+
+    salla-cart-summary .icon {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent-coral));
+      color: #fff;
+      box-shadow: var(--brand-shadow-soft);
+    }
+  }
+}
+
+.app-inner {
+  background: linear-gradient(180deg, rgba(246, 247, 251, 0.92) 0%, rgba(255, 255, 255, 0.6) 320px, #ffffff 100%);
+}
+
+.s-block {
+  &__title h2 {
+    font-family: var(--brand-font-heading), var(--brand-font-ar), sans-serif;
+    font-weight: 800;
+    color: var(--brand-primary);
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 3px;
+      margin: 0.75rem auto 0;
+      border-radius: 999px;
+      background-image: linear-gradient(135deg, var(--brand-accent-coral), var(--brand-accent-orange));
+    }
+  }
+}
+
+.s-block:not(.s-block--hero-slider):not(.s-block--hero):not(.s-block--testimonials) {
+  background: #ffffff;
+  border-radius: var(--brand-radius-lg);
+  box-shadow: var(--brand-shadow-soft);
+  padding: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  margin-block: clamp(1.5rem, 1.2rem + 1vw, 2.5rem);
+}
+
+.s-block--hero-slider {
+  border-radius: var(--brand-radius-lg);
+  overflow: hidden;
+  margin-block: clamp(1rem, 0.6rem + 1vw, 2rem);
+
+  .swiper-slide {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
+  }
+
+  .overlay-bg::after {
+    background: linear-gradient(135deg, rgba(13, 44, 108, 0.72), rgba(0, 70, 255, 0.45));
+  }
+
+  .home-slider__content h2 {
+    font-family: var(--brand-font-heading), sans-serif;
+    font-weight: 800;
+  }
+
+  .home-slider__content .description {
+    font-size: 1.05rem;
+    opacity: 0.82;
+  }
+}
+
+.s-block--special-products,
+.s-block--all-products {
+  background: #ffffff;
+
+  .tab-trigger {
+    border-radius: 999px;
+    border: 1px solid rgba(13, 44, 108, 0.12);
+    padding-inline: 1.25rem;
+    padding-block: 0.45rem;
+    color: var(--brand-muted);
+
+    &.is-active {
+      background-image: linear-gradient(135deg, var(--brand-primary), var(--brand-accent-coral));
+      color: #fff;
+      box-shadow: var(--brand-shadow-soft);
+    }
+  }
+}
+
+.s-block--testimonials {
+  background: linear-gradient(135deg, rgba(13, 44, 108, 0.96), rgba(73, 105, 189, 0.92));
+  color: #fff;
+
+  .s-reviews-header {
+    font-family: var(--brand-font-heading), sans-serif;
+  }
+
+  .s-reviews-testimonial {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: var(--brand-shadow-soft);
+    border-radius: var(--brand-radius-md);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.store-footer {
+  background: linear-gradient(135deg, var(--brand-primary-dark), rgba(8, 20, 49, 0.96));
+  color: rgba(255, 255, 255, 0.86);
+  padding-top: 3rem;
+
+  h3 {
+    font-family: var(--brand-font-heading), sans-serif;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.86);
+
+    &:hover {
+      color: var(--brand-accent-coral);
+    }
+  }
+
+  .store-footer__inner {
+    padding-bottom: 2rem;
+  }
+
+  .copyright-text {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  salla-payments {
+    filter: saturate(1.1) brightness(1.08);
+  }
+}
+
+.breadcrumbs {
+  background: rgba(13, 44, 108, 0.06);
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.load-more {
+  salla-button {
+    border-radius: 999px;
+  }
+}

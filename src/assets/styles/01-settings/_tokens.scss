@@ -1,27 +1,55 @@
-
 :root {
-    --primary-dark: #0D2C6C;
-    --primary-blue: #0D2C6C;
-    --accent-coral: #FF9E1B;
-    --accent-orange-dark: #F36C21;
-    --neutral-light: #f8f9fa;
-    --text-dark: #333333;
-    --accent-ultralight: #fffaf5;
-    --border-radius: 12px;
-    --font-main: 'Tajawal', sans-serif;
-    --font-heading: 'Almarai', sans-serif;
-    --shadow-default: 0 2px 10px rgba(0,0,0,0.07);
-    --shadow-lg: 0 10px 28px rgba(0,0,0,0.1);
+    /* Brand palette */
+    --brand-primary: #0D2C6C;
+    --brand-primary-dark: #0A1F55;
+    --brand-primary-light: #1E40AF;
+    --brand-primary-contrast: #F4F6FF;
+    --brand-accent-coral: #FF9E1B;
+    --brand-accent-orange: #F36C21;
+    --brand-accent-gold: #FCC61D;
+    --brand-surface: #F6F7FB;
+    --brand-surface-alt: #EDF0F8;
+    --brand-border: #D8DEED;
+    --brand-ink: #111827;
+    --brand-muted: #5B6473;
+
+    /* Shadows & radii */
+    --brand-shadow-soft: 0 14px 34px rgba(13, 44, 108, 0.16);
+    --brand-shadow-coral: 0 12px 30px rgba(255, 158, 27, 0.28);
+    --brand-radius-lg: 1.5rem;
+    --brand-radius-md: 1rem;
+    --brand-radius-sm: 0.75rem;
+
+    /* Typography */
+    --brand-font-ar: 'Tajawal', sans-serif;
+    --brand-font-en: 'Inter', sans-serif;
+    --brand-font-heading: 'Almarai', sans-serif;
+
+    /* Bridge variables for legacy utilities */
+    --primary-dark: var(--brand-primary-dark);
+    --primary-blue: var(--brand-primary);
+    --accent-coral: var(--brand-accent-coral);
+    --accent-orange-dark: var(--brand-accent-orange);
+    --neutral-light: var(--brand-surface);
+    --text-dark: var(--brand-ink);
+    --accent-ultralight: var(--brand-surface-alt);
+    --shadow-default: var(--brand-shadow-soft);
+    --shadow-lg: 0 18px 40px rgba(13, 44, 108, 0.22);
 }
 
 [data-theme="dark"] {
-    --primary-dark: #1e3a8a;
-    --primary-blue: #1e3a8a;
-    --accent-coral: #fdba74;
-    --accent-orange-dark: #fb923c;
-    --neutral-light: #1a1d28;
-    --text-dark: #e2e8f0;
-    --accent-ultralight: #2a2d38;
-    --shadow-default: 0 2px 10px rgba(0,0,0,0.2);
-    --shadow-lg: 0 10px 28px rgba(0,0,0,0.25);
+    --brand-primary: #1E3A8A;
+    --brand-primary-dark: #162c6b;
+    --brand-primary-light: #2E4CBB;
+    --brand-primary-contrast: #0A1124;
+    --brand-accent-coral: #FDBA74;
+    --brand-accent-orange: #FB923C;
+    --brand-accent-gold: #FACC15;
+    --brand-surface: #111422;
+    --brand-surface-alt: #1C2237;
+    --brand-border: #2D3650;
+    --brand-ink: #E5E7EF;
+    --brand-muted: #CBD5F5;
+    --brand-shadow-soft: 0 14px 34px rgba(3, 8, 23, 0.45);
+    --brand-shadow-coral: 0 12px 30px rgba(255, 158, 27, 0.25);
 }

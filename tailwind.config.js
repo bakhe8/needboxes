@@ -18,10 +18,20 @@ module.exports = {
         fontFamily: {
             sans: [
                 'var(--font-main)',
+                'Tajawal',
+                'Inter',
+                'Almarai',
                 '-apple-system',
                 'BlinkMacSystemFont',
             ],
-            primary: "var(--font-main)"
+            primary: "var(--font-main)",
+            heading: [
+                'Almarai',
+                'Tajawal',
+                'Inter',
+                'var(--font-main)',
+                'sans-serif'
+            ]
         },
         extend    : {
             transitionTimingFunction: {
@@ -33,7 +43,23 @@ module.exports = {
             colors             : {
                 'dark'         : '#1D1F1F',
                 'darker'       : '#0E0F0F',
-                'danger'       : '#AE0A0A'
+                'danger'       : '#AE0A0A',
+                brand: {
+                    DEFAULT: 'var(--brand-primary)',
+                    primary: 'var(--brand-primary)',
+                    dark: 'var(--brand-primary-dark)',
+                    light: 'var(--brand-primary-light)',
+                },
+                accent: {
+                    coral: 'var(--brand-accent-coral)',
+                    orange: 'var(--brand-accent-orange)',
+                    gold: 'var(--brand-accent-gold)',
+                },
+                surface: {
+                    DEFAULT: 'var(--brand-surface)',
+                    alt: 'var(--brand-surface-alt)',
+                },
+                ink: 'var(--brand-ink)',
             },
             spacing: {
               '3.75': '15px',
@@ -50,6 +76,9 @@ module.exports = {
                 'big'  : '40px',
                 'tiny' : '3px',
                 DEFAULT: '.75rem',
+                'brand-lg': 'var(--brand-radius-lg)',
+                'brand-md': 'var(--brand-radius-md)',
+                'brand-sm': 'var(--brand-radius-sm)',
             },
             fontSize           : {
                 'icon-lg'   : '33px',
@@ -74,6 +103,8 @@ module.exports = {
                 'huge'    : '0px 3px 6px #00000029',
                 'progress': '0 5px 15px rgba(92, 213, 196, 0.4)',
                 'mobile': 'rgb(0 0 0 / 9%) 0px 2px 1px, rgb(0 0 0 / 9%) 0px 4px 2px, rgb(0 0 0 / 9%) 0px 8px 4px, rgb(0 0 0 / 9%) 0px 16px 18px, rgb(0 0 0 / 9%) -15px 10px 7px, rgb(0 0 0 / 9%) -20px 10px 20px, rgb(0 0 0 / 9%) -20px 10px 20px, rgb(0 0 0 / 9%) -25px 20px 20px',
+                'brand': 'var(--brand-shadow-soft)',
+                'brand-coral': 'var(--brand-shadow-coral)',
             },
             width              : {
                 '18': '4.5rem',
