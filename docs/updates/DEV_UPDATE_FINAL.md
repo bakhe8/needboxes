@@ -13,7 +13,7 @@
 
 ## QA Notes
 - `npm run production` completed (Tailwind plugin + Sass import deprecation warnings recorded).
-- `salla theme preview` requires a clean commit; rerun after final commit/push to complete flow.
+- `salla theme preview` blocked by interactive store selector; rerun manually with the target store once ready.
 - Manual review of store-configured assets recommended to ensure imagery matches new palette.
 
 ## Next Actions
