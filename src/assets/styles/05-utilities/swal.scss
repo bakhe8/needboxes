@@ -7,8 +7,7 @@
 		&.swal2-toast {
 			max-width: 300px;
 			padding: 0 10px 5px;
-			box-shadow: 0 1px 3px 1px #00000012;
-
+			      @apply shadow-soft;
       @media (max-width: 640px){
         max-width: 100%;
       }
@@ -41,14 +40,12 @@
 					height: 2px;
 				}
 
-				&-timer-progress-bar {
-					background: #ddd;
-				}
-			}
+				        &-timer-progress-bar {
+									@apply bg-gray-300;
+								}			}
 
-			&.swal2-icon-error {
-				@apply bg-red-400;
-
+			      &.swal2-icon-error {
+							@apply bg-danger;
 				* {
 					@apply text-white;
 				}
@@ -63,9 +60,8 @@
 				}
 			}
 
-			&.swal2-icon-success {
-				@apply bg-green-500;
-
+			      &.swal2-icon-success {
+							@apply bg-success;
 				* {
 					@apply text-white;
 				}

@@ -2,18 +2,17 @@
     "id": 1469728385,
     "name": {
       "ar": "نيدز بوكس",
-      "en": "Needboxes Theme"
+      "en": "NEEDSBOXES Theme"
     },
     "repository": "https://github.com/bakhe8/needboxes",
     "author_email": "bakheet@gmail.com",
     "support_url": "https://needsboxes.com/",
     "description": {
-      "ar": "نسخة مخصصة من ثيم رائد بطابع وهوية NeedsBoxes، مطورة لتجربة تسوق حديثة وألوان وهوية العلامة.",
+      "ar": "نسخة مخصصة من ثيم رائد بطابع وهوية NEEDSBOXES، مطورة لتجربة تسوق حديثة وألوان وهوية العلامة.",
       "en": "A customized version of the Raed theme with NeedsBoxes identity, optimized for a modern branded shopping experience."
     },
         "features": [
         "mega-menu",
-        "fonts",
         "color",
         "breadcrumb",
         "unite-cards-height",
@@ -1031,9 +1030,9 @@
             ]
         }
     ],
-    "support_url": "https://salla.com/",
+    "support_url": "https://needsboxes.com/",
     "description": {
-        "ar": "مجموعة كبيرة من المزايا لدعم تجارتك وتقديم تجربة تسوق مثيرة لعملائك",
-        "en": "A wide range of features to support your business and provide an exciting shopping experience for your customers"
+      "ar": "نسخة مخصصة من ثيم رائد بطابع وهوية NEEDSBOXES، مطورة لتجربة تسوق حديثة وألوان وهوية العلامة.",
+      "en": "A customized version of the Raed theme with NEEDSBOXES identity, optimized for a modern branded shopping experience."
     }
 }

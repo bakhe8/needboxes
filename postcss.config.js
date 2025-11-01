@@ -7,5 +7,8 @@ module.exports = {
     'postcss-preset-env': {
       features: { 'nesting-rules': true },
     },
+    'postcss-logical': {},
+    'postcss-dir-pseudo-class': {},
+    'autoprefixer': {},
   }
 }

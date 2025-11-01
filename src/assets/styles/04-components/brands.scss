@@ -31,7 +31,7 @@
 }
 
 .brand-item {
-  @apply flex justify-center items-center bg-white transition hover:opacity-95 bg-cover h-20 sm:h-24 md:h-32 text-white text-center p-3 sm:p-4 md:p-8 rounded-md overflow-hidden relative;
+  @apply flex justify-center items-center bg-neutral-light transition hover:opacity-95 bg-cover h-20 sm:h-24 md:h-32 text-white text-center p-3 sm:p-4 md:p-8 rounded-md overflow-hidden relative;
 
   .index & {
     @apply p-4;

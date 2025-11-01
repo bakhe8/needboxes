@@ -1,10 +1,33 @@
 {
+  "common": {
+    "shop_now": "Shop Now",
+    "needs_boxes": "NeedsBoxes",
+    "slogan": "Everything you need... in one box."
+  },
   "blocks": {
     "header": {
-      "cart": "Cart"
+      "cart": "Cart",
+      "offers": "Offers",
+      "categories": "Categories",
+      "featured_products": "Featured",
+      "all_products": "Products",
+      "faq": "FAQ",
+      "contact": "Contact"
     },
-    "appBanner": {
-      "download_now": "download now"
+    "footer": {
+      "links": "Links",
+      "payment_and_shipping": "Payment & Shipping",
+      "newsletter": "Newsletter",
+      "subscribe": "Subscribe",
+      "contact_us": "Contact Us"
+    },
+    "home": {
+      "hero_title": "The devices you trust. The accessories you need.",
+      "hero_subtitle": "Discover our range of high-quality electronics and innovative accessories designed to fit your lifestyle.",
+      "today_offers": "Today's Offers",
+      "featured_products": "Featured Products",
+      "customer_reviews": "Customer Reviews",
+      "faq": "FAQ"
     }
   },
   "pages": {
@@ -19,9 +42,5 @@
       "option_name": "Option name",
       "option_content": "Content"
     }
-  },
-  "common": {
-    "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",
-    "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount"
   }
 }

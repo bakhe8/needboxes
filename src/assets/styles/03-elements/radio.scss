@@ -22,7 +22,7 @@
         background-position: center;
         text-align: center;
         line-height: 40px;
-        box-shadow: 0 1px 3px 0 rgba(#000, 0.075);
+        @apply shadow-sm;
 
         &::after {
           opacity: 0;
@@ -65,7 +65,7 @@
           display: inline-flex;
           justify-content: center;
           align-items: center;
-          background-color: #ddd;
+          @apply bg-gray-300;
 
           &::after {
             content: "";
@@ -100,7 +100,7 @@
 
         .rate-title {
           font-weight: bold;
-          color: #2b2d34;
+          @apply text-gray-800;
         }
       }
     }

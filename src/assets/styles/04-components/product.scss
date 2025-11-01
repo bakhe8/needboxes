@@ -1,7 +1,7 @@
   
 // Wishlist Product entry
 .product-entry {
-  @apply h-full transition-shadow duration-300 bg-white hover:shadow-default rounded-lg justify-between flex relative;
+  @apply h-full transition-shadow duration-300 bg-white hover:shadow-soft rounded-lg justify-between flex relative;
 
   &--wishlist {
     @apply justify-between p-4 flex-col sm:flex-row;
@@ -32,7 +32,7 @@
 
 // share list
 .share-btns-list{
-  @apply absolute z-10 overflow-hidden opacity-0 top-12 bg-white flex items-center flex-col shadow-huge rounded-3xl;
+  @apply absolute z-10 overflow-hidden opacity-0 top-12 bg-white flex items-center flex-col shadow-soft rounded-3xl;
 
   a{
     @apply block p-3 hover:text-primary;
@@ -48,14 +48,13 @@
 }
 
 // Digital Rating(SVG)---------------------------
-.s-product-card-content-pie-svg-base{ 
+.s-product-card-content-pie-svg-base{
   transition: stroke-dashoffset 1s linear;
-  stroke: #E8EDF2;
+  @apply stroke-gray-200;
   stroke-width: 2px;
   stroke-linecap: round;
   fill: none;
 }
-
 .s-product-card-content-pie-svg-bar{
   fill: none;
   stroke: var(--color-primary);
@@ -339,12 +338,12 @@
 }
 
 .s-product-card-promotion-title{
-  @apply bg-red-800 text-white;
+  @apply bg-danger text-white;
 }
 
 .s-product-card-sale-price {
   h4{
-    @apply text-red-800 #{!important};
+    @apply text-danger #{!important};
   }
 
   span{
@@ -364,7 +363,7 @@
 
 // bank offer corner badge
 #offer-corner-badge{
-  @apply float-left absolute bg-red-600 text-white transform rtl:-rotate-45 ltr:rotate-45 px-12 py-1 h-auto w-auto border-0 m-0 z-1 rtl:top-3 ltr:top-5 rtl:-left-12 ltr:-right-14;
+  @apply float-left absolute bg-danger text-white transform rtl:-rotate-45 ltr:rotate-45 px-12 py-1 h-auto w-auto border-0 m-0 z-1 rtl:top-3 ltr:top-5 rtl:-left-12 ltr:-right-14;
 }
 
 // cart options

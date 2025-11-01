@@ -12,12 +12,12 @@
     &-months {
       .numInputWrapper {
         .cur-year {
-          padding: 0 0 0 15px;
+          padding-inline-start: 15px;
         }
       }
       [class^="arrow"] {
-        right: unset;
-        left: 0;
+        inset-inline-end: unset;
+        inset-inline-start: 0;
       }
     }
   }

@@ -1,11 +1,11 @@
 {
-  "name": "theme-raed",
-  "version": "1.0.3",
+  "name": "needsboxes-theme",
+  "version": "1.0.0-NEEDSBOXES",
   "description": "Salla Theme",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SallaApp/theme-raed.git"
+    "url": "git+https://github.com/bakhe8/needboxes.git"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -15,7 +15,7 @@
     "development": "webpack --mode development",
     "watch": "webpack --mode development --watch"
   },
-  "author": "Salla",
+  "author": "Bakheet Ahmed AlZahrani",
   "dependencies": {
     "@babel/runtime": "^7.26.10",
     "animejs": "^3.2.1",
