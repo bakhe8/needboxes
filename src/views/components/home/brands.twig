@@ -27,7 +27,7 @@
             {% for brand in component.brands %}
                 {% if loop.first or loop.index0%3==0 %}
                     <a href="{{ brand.url }}"
-                       class="brand-item {{ component.brands|length > 5  ? 'sm:row-span-2 sm:h-auto': '' }}">
+                       class="brand-item bg-neutral-light {{ component.brands|length > 5  ? 'sm:row-span-2 sm:h-auto': '' }}">
                         <img class="max-h-full" width="400" height="300" src="{{ brand.logo }}" alt="{{ brand.name }}"/>
                     </a>
                 {% else %}
