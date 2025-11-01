@@ -56,7 +56,7 @@ Clone the Salla “Raed” theme, reapply brand visuals from DeepSeek, and ship 
    - Pull the latest `base/raed-import` branch or clone the official repo.  
    - Compare each Twig file. Restore blocks, includes, loops, filters, and variables whenever they diverge. No inline data or hard-coded asset paths.
 2. **Repository alignment**  
-   - Mirror updates between the primary (`NEEDSBOXES`) and secondary (`needboxes`) repositories.  
+   - Mirror updates between the primary (`needboxes`) repository and any downstream forks before applying visuals.  
    - Resolve drift before applying visual changes.
 3. **Brand application**  
    - Use `deepseek.html` as the single source of truth for palette, spacing, typography, and elevations.  

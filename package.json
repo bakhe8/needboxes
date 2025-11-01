@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bakhe8/NEEDSBOXES.git"
+    "url": "git+https://github.com/bakhe8/needboxes.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -12,10 +12,11 @@
 - ✅ Documentation refresh (README, tracker, audit, checklist, changelog)
 
 ## QA Notes
-- Pending full `salla theme preview` run after this update (requires CLI session).
+- `npm run production` completed (Tailwind plugin + Sass import deprecation warnings recorded).
+- `salla theme preview` requires a clean commit; rerun after final commit/push to complete flow.
 - Manual review of store-configured assets recommended to ensure imagery matches new palette.
 
 ## Next Actions
-1. Execute `npm run production` and `salla theme preview`.
-2. Complete Verification Checklist.
-3. Tag release `v1.0.0-NEEDSBOXES` once QA signs off.
+1. Commit remaining changes, rerun `salla theme preview`, and walkthrough cart/account flows.
+2. Finalise Verification Checklist (mark functional QA items post-preview).
+3. Tag release `v1.0.0-NEEDSBOXES` and push once QA signs off.
