@@ -27,8 +27,8 @@ Typography and colors are exposed as CSS variables in `src/assets/styles/01-sett
 ## Getting Started
 
 ```bash
-# Clone the primary repository (NEEDSBOXES)
-git clone https://github.com/bakhe8/NEEDSBOXES needsboxes-theme
+# Clone the primary repository
+git clone https://github.com/bakhe8/needboxes needsboxes-theme
 cd needsboxes-theme
 
 # Add Raed and the secondary repository for diffing logic/UI
