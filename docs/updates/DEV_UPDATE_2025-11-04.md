@@ -2,7 +2,7 @@
 
 ## Summary of Changes
 
-Today's focus was on completing the rebranding of all remaining pages, finalizing core components, and reviewing JavaScript files.
+Today's focus was on completing the rebranding of all remaining pages, finalizing core components, reviewing JavaScript files, and skipping image integration.
 
 ### Pages Rebranding
 
@@ -39,7 +39,10 @@ Today's focus was on completing the rebranding of all remaining pages, finalizin
 -   Reviewed `/src/locales/ar.json` and `/src/locales/en.json` for completeness and updated brand tone.
 -   Confirmed no Raed text remains and all new strings (checkout, hero, etc.) are translated.
 
+### Image Integration
+
+-   Image integration has been skipped as per user's instruction.
+
 ## Next Steps
 
-- Integrate the NEEDSBOXES product and category images once provided by the user.
 - Run `salla theme preview` and verify all major routes, RTL/LTR layouts, and mobile/desktop viewports.
