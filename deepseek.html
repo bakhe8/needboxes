@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeedsBoxes — متجر الإلكترونيات والاكسسوارات المتكامل</title>
+    <meta name="description" content="NeedsBoxes - صندوق يجمع لك اغلب احتياجاتك الالكترونية وملحقاتها. سماعات، مايكروفونات، إضاءة، أدوات ومستلزمات إلكترونية متنوعة.">
+    <meta name="theme-color" content="#0D2C6C">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Almarai:wght@700;800&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Swiper & AOS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { dark: '#0D2C6C', blue: '#0D2C6C', coral: '#FF9E1B', orange: '#F36C21' },
+                        navy: '#11224E', blue: '#0046FF', cyan: '#73C8D2', orange: '#FA812F', gold: '#FCC61D',
+                        neutral: { light: '#f8f9fa', ink: '#333333' },
+                        success: '#22c55e', danger: '#ef4444', grayx: '#E9E9E9', inky: '#111827'
+                    },
+                    boxShadow: {
+                        nb: '0 10px 30px rgba(13,44,108,0.18)',
+                        coral: '0 10px 28px rgba(255,158,27,.30)',
+                        glow: '0 10px 30px rgba(0,70,255,.22)',
+                        soft: '0 10px 30px rgba(0,0,0,.10)'
+                    },
+                    backgroundImage: {
+                        'nb-hero': 'linear-gradient(135deg, #0D2C6C 0%, #1E40AF 65%)',
+                        'nb-coral': 'linear-gradient(135deg, #FF9E1B, #F36C21)',
+                        'nb-glass': 'linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.05))',
+                        hero: 'linear-gradient(135deg, #0046FF 0%, #11224E 75%)',
+                        stripe: 'repeating-linear-gradient(135deg, rgba(255,255,255,.10) 0 6px, rgba(255,255,255,.04) 6px 16px)'
+                    },
+                    keyframes: {
+                        shimmer: { '0%': {transform: 'translateX(-100%)'}, '100%': {transform:'translateX(100%)'} },
+                        cartJiggle: { '0%': { transform: 'scale(1)' }, '25%': { transform: 'scale(1.1) rotate(5deg)' }, '50%': { transform: 'scale(1.1) rotate(-5deg)' }, '75%': { transform: 'scale(1.1) rotate(5deg)' }, '100%': { transform: 'scale(1)' } },
+                        spin: { 'to': { transform: 'rotate(360deg)' } },
+                        bump: { '0%':{transform:'scale(1)'}, '50%':{transform:'scale(1.06)'}, '100%':{transform:'scale(1)'} },
+                        elementRise: { '0%': { transform: 'translateY(20px)', opacity: 0 }, '100%': { transform: 'translateY(0)', opacity: 1 } },
+                        pulse: { '0%': { boxShadow: '0 0 0 0 rgba(37, 211, 102, 0.7)' }, '70%': { boxShadow: '0 0 0 15px rgba(37, 211, 102, 0)' }, '100%': { boxShadow: '0 0 0 0 rgba(37, 211, 102, 0)' } },
+                        fadeIn: { 'from': { opacity: 0, transform: 'translateY(10px)' }, 'to': { opacity: 1, transform: 'translateY(0)' } },
+                        loading: { '0%': { backgroundPosition: '200% 0' }, '100%': { backgroundPosition: '-200% 0' } }
+                    },
+                    animation: { 
+                        'cart-jiggle': 'cartJiggle .5s ease', 
+                        spin: 'spin 1s ease-in-out infinite', 
+                        bump:'bump .35s ease', 
+                        pulse:'pulse 2s infinite',
+                        fadeIn: 'fadeIn 0.3s ease',
+                        loading: 'loading 1.5s infinite'
+                    },
+                    borderRadius: { 'xl': '1rem', '2xl': '1.25rem', '3xl': '1.5rem' }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-dark: #0D2C6C;
+            --primary-blue: #0D2C6C;
+            --accent-coral: #FF9E1B;
+            --accent-orange-dark: #F36C21;
+            --neutral-light: #f8f9fa;
+            --text-dark: #333333;
+            --accent-ultralight: #fffaf5;
+            --border-radius: 12px;
+            --font-main: 'Tajawal', sans-serif;
+            --font-heading: 'Almarai', sans-serif;
+            --shadow-default: 0 2px 10px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 28px rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary-dark: #1e3a8a;
+            --primary-blue: #1e3a8a;
+            --accent-coral: #fdba74;
+            --accent-orange-dark: #fb923c;
+            --neutral-light: #1a1d28;
+            --text-dark: #e2e8f0;
+            --accent-ultralight: #2a2d38;
+            --shadow-default: 0 2px 10px rgba(0,0,0,0.2);
+            --shadow-lg: 0 10px 28px rgba(0,0,0,0.25);
+        }
+
+        /* Base Styles */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: var(--neutral-light);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--primary-dark);
+            transition: color 0.3s ease;
+        }
+        [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 {
+            color: var(--accent-coral);
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Enhanced Focus Indicators */
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        select:focus-visible {
+            outline: 3px solid var(--primary-blue);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-dark: #00008B;
+                --accent-coral: #FF4500;
+            }
+            
+            .salla-product-card {
+                border: 2px solid #333;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Section Title with Gradient Underline */
+        .salla-section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .salla-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--accent-coral) 100%);
+            transition: all 0.3s;
+        }
+        [data-theme="dark"] .salla-section-title::after {
+            background: linear-gradient(90deg, var(--accent-coral) 0%, var(--primary-dark) 100%);
+        }
+
+        /* Enhanced Product Card */
+        .salla-product-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        .salla-product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(13,44,108,.15);
+            border-color: var(--accent-coral);
+        }
+        .salla-product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background: #f8f9fa;
+        }
+        .salla-product-image img {
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            mix-blend-mode: multiply;
+        }
+        .salla-product-card:hover .salla-product-image img {
+            transform: scale(1.08);
+        }
+        [data-theme="dark"] .salla-product-card {
+            background-color: #222530;
+            border-color: rgba(255,255,255,0.1);
+        }
+        .salla-product-badge {
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-orange-dark) 100%);
+            color: #111827;
+        }
+
+        /* Enhanced CTA Button */
+        .salla-add-to-cart {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .salla-add-to-cart::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .salla-add-to-cart:hover::before {
+            left: 100%;
+        }
+        .salla-add-to-cart:hover {
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-orange-dark) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 158, 27, 0.3);
+        }
+        .out-of-stock { opacity: 0.6; }
+        .out-of-stock-badge {
+            background: #4b5563;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.25rem 0.75rem;
+            border-radius: 99px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            z-index: 5;
+        }
+
+        /* Enhanced Filter Buttons */
+        .product-filter-btn {
+            background-color: #fff;
+            border: 1px solid #e0e8ff;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            min-height: 48px;
+            min-width: 48px;
+        }
+        .product-filter-btn.active-filter {
+            background-color: var(--primary-dark);
+            color: white;
+            border-color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        [data-theme="dark"] .product-filter-btn {
+            background-color: #222530;
+            border-color: rgba(255,255,255,.1);
+        }
+        [data-theme="dark"] .product-filter-btn.active-filter {
+            background-color: var(--accent-coral);
+            color: #111827;
+            border-color: var(--accent-coral);
+        }
+
+        /* Enhanced Skeleton Loading */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        [data-theme="dark"] .skeleton {
+            background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+            background-size: 200% 100%;
+        }
+
+        /* NeedsBoxes animated logo */
+        .needsbox-logo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .needsbox-box {
+            position: relative;
+            width: 24px;
+            height: 16px;
+            background: linear-gradient(to bottom, var(--accent-coral), var(--accent-orange-dark));
+            border-radius: 2px;
+            animation: bump 1s ease-out;
+        }
+        .needsbox-item {
+            position: absolute;
+            background-color: var(--primary-dark);
+            animation: elementRise 1s ease-out .5s both;
+        }
+        .needsbox-usb {
+            left: 2px; bottom: -4px; width: 6px; height: 10px;
+            border-radius: 1px 1px 0 0;
+        }
+        .needsbox-bulb {
+            left: 50%; transform: translateX(-50%); bottom: -6px;
+            width: 8px; height: 10px;
+            border-radius: 4px 4px 2px 2px;
+            animation-delay: .7s;
+        }
+        .needsbox-headphones {
+            right: 4px; bottom: -5px; width: 10px; height: 8px;
+            border-radius: 4px 4px 2px 2px;
+            animation-delay: .9s;
+        }
+
+        /* Sidebar */
+        .sidebar-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 40;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
+        }
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            max-width: 85vw;
+            height: 100%;
+            background: #fff;
+            z-index: 50;
+            transition: right .3s ease-in-out, left .3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -2px 0 10px rgba(0,0,0,.1);
+        }
+        [dir="ltr"] .sidebar {
+            right: auto;
+            left: -300px;
+        }
+        .sidebar.active {
+            right: 0;
+        }
+        [dir="ltr"] .sidebar.active {
+            left: 0;
+        }
+        [data-theme="dark"] .sidebar {
+            background: #1a1d28;
+        }
+
+        /* Mini-cart */
+        .mini-cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 98;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
+        }
+        .mini-cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mini-cart {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            max-width: 90vw;
+            height: 100%;
+            background: #fff;
+            z-index: 99;
+            transition: right .3s ease-in-out, left .3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 15px rgba(0,0,0,.1);
+        }
+        [dir="ltr"] .mini-cart {
+            right: auto;
+            left: -400px;
+        }
+        .mini-cart.active {
+            right: 0;
+        }
+        [dir="ltr"] .mini-cart.active {
+            left: 0;
+        }
+        [data-theme="dark"] .mini-cart {
+            background: #1a1d28;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.6);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
+            padding: 1rem;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow: auto;
+            transform: scale(.96);
+            transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+        [data-theme="dark"] .modal-card {
+            background: #1a1d28;
+        }
+        .modal-tab-btn {
+            border-bottom: 3px solid transparent;
+            padding-bottom: .5rem;
+            opacity: .6;
+            transition: all 0.2s;
+        }
+        .modal-tab-btn.active {
+            border-color: var(--accent-coral);
+            opacity: 1;
+            font-weight: bold;
+        }
+        .modal-tab-panel {
+            display: none;
+        }
+        .modal-tab-panel.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Rating */
+        .rating i {
+            color: #F59E0B;
+        }
+
+        /* Line clamp */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Glass effect */
+        .glass {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.05));
+        }
+
+        /* Card hover effect */
+        .card-hover-effect {
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Trust Indicators */
+        .trust-indicators {
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        [data-theme="dark"] .trust-indicators {
+            border-top-color: rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body class="selection:bg-[var(--accent-coral)]/30">
+    <a href="#main" class="sr-only">انتقل إلى المحتوى الرئيسي</a>
+
+    <!-- Trust Bar -->
+    <div class="hidden md:block bg-[#07173f] text-white text-sm dark:bg-gray-900">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <p>شحن سريع — دفع آمن — منتجات أصلية 100%</p>
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved"></i> ضمان سنة</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-truck-fast"></i> توصيل خلال 48 ساعة*</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Header with Hide/Show on Scroll -->
+    <header class="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-gray-200/70 dark:bg-[#0f1422]/70 dark:border-white/10 transition-transform duration-300">
+        <div class="container mx-auto px-4 py-3 flex items-center gap-3 justify-between">
+            <!-- Left Side: Menu + Logo -->
+            <div class="flex items-center gap-3">
+                <button id="sidebarToggle" class="lg:hidden px-3 py-2 rounded-xl bg-white ring-1 ring-gray-200 hover:bg-gray-50 dark:bg-gray-700 dark:ring-white/10 dark:hover:bg-gray-600" aria-label="Menu" style="min-width: 48px; min-height: 48px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="#" class="flex items-center gap-2" aria-label="Home" style="min-width: 48px; min-height: 48px;">
+                    <span class="w-10 h-10 rounded-xl grid place-items-center bg-gradient-to-br from-[var(--accent-coral)] to-[var(--accent-orange-dark)] text-white shadow-coral">
+                        <!-- Animated Logo -->
+                        <div class="needsbox-logo">
+                            <div class="needsbox-box">
+                                <div class="needsbox-item needsbox-usb"></div>
+                                <div class="needsbox-item needsbox-bulb"></div>
+                                <div class="needsbox-item needsbox-headphones"></div>
+                            </div>
+                        </div>
+                    </span>
+                    <span class="font-extrabold text-[var(--primary-dark)] dark:text-white text-lg tracking-tight hidden sm:block">NEEDS BOXES</span>
+                </a>
+                <nav class="hidden lg:flex items-center gap-6 font-semibold" aria-label="Main Navigation">
+                    <a class="hover:text-[var(--primary-blue)] dark:hover:text-[var(--accent-coral)] transition-colors duration-200" href="#offers">العروض</a>
+                    <a class="hover:text-[var(--primary-blue)] dark:hover:text-[var(--accent-coral)] transition-colors duration-200" href="#categories">التصنيفات</a>
+                    <a class="hover:text-[var(--primary-blue)] dark:hover:text-[var(--accent-coral)] transition-colors duration-200" href="#featured-products">المميزة</a>
+                    <a class="hover:text-[var(--primary-blue)] dark:hover:text-[var(--accent-coral)] transition-colors duration-200" href="#all-products">المنتجات</a>
+                    <a class="hover:text-[var(--primary-blue)] dark:hover:text-[var(--accent-coral)] transition-colors duration-200" href="#faq">الأسئلة</a>
+                </nav>
+            </div>
+            <!-- Right Side: Search + Actions -->
+            <div class="flex items-center gap-2">
+                <div class="relative hidden md:block">
+                    <input id="searchInput" class="peer w-64 px-4 py-2 rounded-full border dark:border-white/10 dark:bg-gray-700 outline-none focus:ring-2 focus:ring-[var(--primary-blue)]" placeholder="ابحث عن المنتجات…" aria-label="Search products" />
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" aria-hidden="true"></i>
+                </div>
+                <button id="dirToggle" class="px-3 py-2 rounded-xl bg-white ring-1 ring-gray-200 hover:bg-gray-50 dark:bg-gray-700 dark:ring-white/10 dark:hover:bg-gray-600" aria-label="Toggle Language Direction" style="min-width: 48px; min-height: 48px;">RTL/LTR</button>
+                <button id="themeToggle" class="px-3 py-2 rounded-xl bg-white ring-1 ring-gray-200 hover:bg-gray-50 dark:bg-gray-700 dark:ring-white/10 dark:hover:bg-gray-600" aria-label="Toggle Dark Mode" style="min-width: 48px; min-height: 48px;">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="cartBtn" class="px-4 py-2 rounded-full text-white bg-gradient-to-r from-[var(--accent-coral)] to-[var(--accent-orange-dark)] hover:shadow-lg shadow-coral flex items-center gap-2" aria-label="View Cart" style="min-width: 48px; min-height: 48px;">
+                    <i class="fa-solid fa-bag-shopping ml-1"></i>
+                    <span class="inline-block bg-white/20 px-2 py-0.5 rounded" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+        <!-- Decorative bottom border -->
+        <div class="h-[2px] bg-gradient-to-r from-[var(--primary-dark)] via-[var(--accent-coral)] to-[var(--primary-dark)]" aria-hidden="true"></div>
+    </header>
+
+    <!-- Sidebar (Mobile Menu) -->
+    <div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
+    <aside id="sidebar" class="sidebar" aria-label="Site menu">
+        <div class="p-4 border-b border-gray-200/70 dark:border-white/10 flex items-center justify-between">
+            <h2 class="font-extrabold text-lg text-[var(--primary-dark)] dark:text-[var(--accent-coral)]">NEEDS BOXES</h2>
+            <button id="sidebarClose" class="text-2xl" aria-label="Close" style="min-width: 48px; min-height: 48px;"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="p-4 space-y-3 overflow-y-auto">
+            <div class="mb-2">
+                <input id="mobileSearch" type="search" placeholder="ابحث…" class="w-full px-4 py-2.5 rounded-full border dark:border-white/10 dark:bg-gray-700 bg-white/90 focus:outline-none focus:ring-2 focus:ring-[var(--primary-blue)]" aria-label="Search" />
+            </div>
+            <a class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 sidebar-link" href="#" style="min-height: 48px;">
+                <i class="fa-solid fa-house w-5 text-center"></i> الرئيسية
+            </a>
+            <a class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 sidebar-link" href="#categories" style="min-height: 48px;">
+                <i class="fa-solid fa-th-large w-5 text-center"></i> التصنيفات
+            </a>
+            <a class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 sidebar-link" href="#featured-products" style="min-height: 48px;">
+                <i class="fa-solid fa-star w-5 text-center"></i> المميزة
+            </a>
+            <a class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 sidebar-link" href="#all-products" style="min-height: 48px;">
+                <i class="fa-solid fa-box-open w-5 text-center"></i> كل المنتجات
+            </a>
+            <a class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 sidebar-link" href="#testimonials" style="min-height: 48px;">
+                <i class="fa-solid fa-comment-dots w-5 text-center"></i> آراء العملاء
+            </a>
+            <a class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 sidebar-link" href="#faq" style="min-height: 48px;">
+                <i class="fa-solid fa-circle-question w-5 text-center"></i> الأسئلة
+            </a>
+            <a class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 sidebar-link" href="#contact" style="min-height: 48px;">
+                <i class="fa-solid fa-headset w-5 text-center"></i> تواصل
+            </a>
+        </div>
+    </aside>
+
+    <main id="main">
+        <!-- Hero with Straight Bottom Edge -->
+        <section id="hero" class="relative overflow-hidden bg-hero">
+            <!-- Background Image & Gradient -->
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-stripe opacity-20"></div>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop" alt="High-quality electronics and accessories" class="w-full h-full object-cover opacity-15" loading="lazy" decoding="async">
+            </div>
+            <!-- Content -->
+            <div class="relative max-w-screen-xl mx-auto px-4 py-24 sm:py-32 text-center" data-aos="fade-up">
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-white">الأجهزة التي تثق بها. الملحقات التي تحتاجها.</h1>
+                <p class="text-lg sm:text-xl mt-4 mb-8 text-white/90 max-w-2xl mx-auto">اكتشف مجموعتنا من الإلكترونيات عالية الجودة والملحقات المبتكرة المصممة لتناسب أسلوب حياتك.</p>
+                <a href="#featured-products" class="inline-block bg-gradient-to-r from-[var(--accent-coral)] to-[var(--accent-orange-dark)] text-ink px-8 py-3 rounded-2xl text-lg font-extrabold hover:brightness-110 shadow-coral">تسوق الآن</a>
+            </div>
+            <!-- Straight bottom edge - no wave -->
+        </section>
+
+        <!-- Trust Indicators Section -->
+        <section class="trust-indicators bg-white dark:bg-gray-800 py-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <div class="w-12 h-12 mx-auto mb-3 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-shield-check text-green-600 text-xl"></i>
+                        </div>
+                        <p class="font-semibold text-sm">ضمان سنة</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">على جميع المنتجات</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 mx-auto mb-3 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-truck-fast text-blue-600 text-xl"></i>
+                        </div>
+                        <p class="font-semibold text-sm">توصيل سريع</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">خلال 48 ساعة</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 mx-auto mb-3 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-rotate-left text-purple-600 text-xl"></i>
+                        </div>
+                        <p class="font-semibold text-sm">إرجاع سهل</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">خلال 7 أيام</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 mx-auto mb-3 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-headset text-orange-600 text-xl"></i>
+                        </div>
+                        <p class="font-semibold text-sm">دعم فني</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">24/7</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offers Swiper + Countdown -->
+        <section id="offers" class="py-10">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
+                    <h2 class="text-2xl font-extrabold salla-section-title">عروض اليوم</h2>
+                    <div id="countdown" class="flex items-center gap-2 text-sm" aria-label="Time left for offers">
+                        <span class="px-2 py-1 rounded bg-gray-100 dark:bg-gray-700" id="d">00</span>يوم
+                        <span class="px-2 py-1 rounded bg-gray-100 dark:bg-gray-700" id="h">00</span>ساعة
+                        <span class="px-2 py-1 rounded bg-gray-100 dark:bg-gray-700" id="m">00</span>دقيقة
+                        <span class="px-2 py-1 rounded bg-gray-100 dark:bg-gray-700" id="s">00</span>ثانية
+                    </div>
+                </div>
+                <div class="swiper offers-swiper">
+                    <div class="swiper-wrapper" id="offers-wrapper">
+                        <!-- Skeletons for offers -->
+                        <div class="swiper-slide"><div class="skeleton h-64 rounded-2xl"></div></div>
+                        <div class="swiper-slide"><div class="skeleton h-64 rounded-2xl"></div></div>
+                        <div class="swiper-slide"><div class="skeleton h-64 rounded-2xl"></div></div>
+                    </div>
+                    <div class="swiper-pagination mt-4 relative"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section id="categories" class="py-12">
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="#all-products" class="group relative rounded-2xl overflow-hidden bg-white border dark:border-white/10 dark:bg-gray-800 shadow-soft hover:shadow-nb min-h-[160px] flex flex-col justify-end p-6 transition-all duration-300 hover:-translate-y-1" data-cat-filter="audio">
+                    <img src="https://images.unsplash.com/photo-1518443895914-6bd2d118b3a1?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity" alt="مايكروفونات" loading="lazy" decoding="async"/>
+                    <div class="relative">
+                        <h3 class="text-2xl font-extrabold text-white">مايكروفونات</h3>
+                        <p class="text-white/85">احترافية ومحمولة</p>
+                    </div>
+                </a>
+                <a href="#all-products" class="group relative rounded-2xl overflow-hidden bg-white border dark:border-white/10 dark:bg-gray-800 shadow-soft hover:shadow-nb min-h-[160px] flex flex-col justify-end p-6 transition-all duration-300 hover:-translate-y-1" data-cat-filter="lighting">
+                    <img src="https://images.unsplash.com/photo-1512446816042-444d641267d4?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity" alt="إضاءة" loading="lazy" decoding="async"/>
+                    <div class="relative">
+                        <h3 class="text-2xl font-extrabold text-white">إضاءة وشواحن</h3>
+                        <p class="text-white/85">LED و RGB</p>
+                    </div>
+                </a>
+                <a href="#all-products" class="group relative rounded-2xl overflow-hidden bg-white border dark:border-white/10 dark:bg-gray-800 shadow-soft hover:shadow-nb min-h-[160px] flex flex-col justify-end p-6 transition-all duration-300 hover:-translate-y-1" data-cat-filter="accessory">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity" alt="اكسسوارات" loading="lazy" decoding="async"/>
+                    <div class="relative">
+                        <h3 class="text-2xl font-extrabold text-white">اكسسوارات</h3>
+                        <p class="text-white/85">تنظيم ومنافذ</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section id="featured-products" class="py-12">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="salla-section-title text-3xl font-extrabold inline-block relative pb-3">المنتجات المميزة</h2>
+                </div>
+                <ul id="featured-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Skeletons for Featured Products -->
+                    <li class="skeleton h-[420px]"></li>
+                    <li class="skeleton h-[420px]"></li>
+                    <li class="skeleton h-[420px] hidden sm:block"></li>
+                    <li class="skeleton h-[420px] hidden lg:block"></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- All Products + Filters -->
+        <section id="all-products" class="py-12 bg-white/60 dark:bg-black/10">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-3 mb-5">
+                    <!-- Filters -->
+                    <div class="flex items-center gap-2 flex-wrap justify-center">
+                        <button class="product-filter-btn px-3 py-1.5 rounded-full active-filter" data-cat="all">الكل</button>
+                        <button class="product-filter-btn px-3 py-1.5 rounded-full" data-cat="audio">صوتيات</button>
+                        <button class="product-filter-btn px-3 py-1.5 rounded-full" data-cat="lighting">إضاءة</button>
+                        <button class="product-filter-btn px-3 py-1.5 rounded-full" data-cat="charging">شحن</button>
+                        <button class="product-filter-btn px-3 py-1.5 rounded-full" data-cat="accessory">اكسسوارات</button>
+                    </div>
+                    <!-- Sorting & Price -->
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <select id="sortSelect" class="px-3 py-2 rounded-xl border dark:border-white/10 dark:bg-gray-700 w-full sm:w-auto" aria-label="Sort products">
+                            <option value="pop">الأكثر رواجًا</option>
+                            <option value="priceAsc">السعر: من الأقل للأعلى</option>
+                            <option value="priceDesc">السعر: من الأعلى للأقل</option>
+                            <option value="rating">الأعلى تقييمًا</option>
+                            <option value="new">الأحدث</option>
+                        </select>
+                        <div class="flex items-center gap-2">
+                            <input id="priceMin" type="number" min="0" placeholder="أقل سعر" class="px-3 py-2 rounded-xl border dark:border-white/10 dark:bg-gray-700 w-28" aria-label="Minimum price">
+                            <input id="priceMax" type="number" min="0" placeholder="أعلى سعر" class="px-3 py-2 rounded-xl border dark:border-white/10 dark:bg-gray-700 w-28" aria-label="Maximum price">
+                        </div>
+                    </div>
+                </div>
+                <ul id="all-products-list" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" aria-live="polite">
+                    <!-- Skeletons for All Products -->
+                    <li class="skeleton h-[420px]"></li>
+                    <li class="skeleton h-[420px]"></li>
+                    <li class="skeleton h-[420px] hidden sm:block"></li>
+                    <li class="skeleton h-[420px] hidden lg:block"></li>
+                    <li class="skeleton h-[420px] hidden lg:block"></li>
+                    <li class="skeleton h-[420px] hidden lg:block"></li>
+                    <li class="skeleton h-[420px] hidden lg:block"></li>
+                    <li class="skeleton h-[420px] hidden lg:block"></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Testimonials (static) -->
+        <section id="testimonials" class="py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-extrabold mb-6 salla-section-title text-center">آراء العملاء</h2>
+                <div class="grid md:grid-cols-3 gap-4 mt-8">
+                    <article class="p-5 rounded-2xl bg-white border dark:border-white/10 dark:bg-gray-800 shadow-soft hover:shadow-nb transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png" class="w-10 h-10 rounded-full" alt="Avatar" loading="lazy" decoding="async"/>
+                            <div>
+                                <strong>عبدالله</strong>
+                                <div class="text-amber-500 text-sm">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>منتجات أصلية وتغليف ممتاز. تجربة شراء رائعة.</p>
+                    </article>
+                    <article class="p-5 rounded-2xl bg-white border dark:border-white/10 dark:bg-gray-800 shadow-soft hover:shadow-nb transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_female.png" class="w-10 h-10 rounded-full" alt="Avatar" loading="lazy" decoding="async"/>
+                            <div>
+                                <strong>سارة</strong>
+                                <div class="text-amber-500 text-sm">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>توصيل سريع وخدمة عملاء راقية.</p>
+                    </article>
+                    <article class="p-5 rounded-2xl bg-white border dark:border-white/10 dark:bg-gray-800 shadow-soft hover:shadow-nb transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png" class="w-10 h-10 rounded-full" alt="Avatar" loading="lazy" decoding="async"/>
+                            <div>
+                                <strong>محمد</strong>
+                                <div class="text-amber-500 text-sm">★★★★☆</div>
+                            </div>
+                        </div>
+                        <p>تنوع كبير في الإكسسوارات وأسعار منافسة.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-12 bg-white/60 dark:bg-black/10">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-extrabold mb-6 salla-section-title text-center">الأسئلة الشائعة</h2>
+                <div class="max-w-3xl mx-auto space-y-4 mt-8">
+                    <details class="bg-white dark:bg-gray-800 rounded-2xl p-4 border dark:border-white/10 shadow-sm transition-all duration-300 hover:shadow-md" open>
+                        <summary class="font-bold cursor-pointer">هل المنتجات أصلية؟</summary>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">نعم، جميع منتجاتنا أصلية 100% ومشمولة بضمان الوكيل المعتمد.</p>
+                    </details>
+                    <details class="bg-white dark:bg-gray-800 rounded-2xl p-4 border dark:border-white/10 shadow-sm transition-all duration-300 hover:shadow-md">
+                        <summary class="font-bold cursor-pointer">كم يستغرق التوصيل؟</summary>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">عادةً يستغرق التوصيل من 48 إلى 72 ساعة داخل المدن الرئيسية في المملكة.</p>
+                    </details>
+                    <details class="bg-white dark:bg-gray-800 rounded-2xl p-4 border dark:border-white/10 shadow-sm transition-all duration-300 hover:shadow-md">
+                        <summary class="font-bold cursor-pointer">هل يمكن الاستبدال/الاسترجاع؟</summary>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">نعم، نوفر خدمة الاستبدال والاسترجاع خلال 7 أيام من تاريخ استلام الطلب، وفقًا للشروط والأحكام.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-extrabold mb-6 salla-section-title text-center">تواصل معنا</h2>
+                <div class="grid md:grid-cols-2 gap-6 mt-8">
+                    <form class="bg-white dark:bg-gray-800 rounded-2xl p-4 border dark:border-white/10 shadow-soft space-y-3 transition-all duration-300 hover:shadow-md">
+                        <input class="w-full px-4 py-2 rounded-xl border dark:border-white/10 dark:bg-gray-700" placeholder="الاسم" aria-label="Name"/>
+                        <input class="w-full px-4 py-2 rounded-xl border dark:border-white/10 dark:bg-gray-700" placeholder="البريد الإلكتروني" aria-label="Email"/>
+                        <textarea class="w-full px-4 py-2 rounded-xl border dark:border-white/10 dark:bg-gray-700" rows="4" placeholder="رسالتك" aria-label="Your message"></textarea>
+                        <button type="submit" class="px-4 py-2 rounded-xl text-white bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-blue)] transition-all hover:scale-105">إرسال</button>
+                    </form>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 border dark:border-white/10 shadow-soft space-y-3 transition-all duration-300 hover:shadow-md">
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-[var(--accent-coral)]"></i> 966-57-372-5600</p>
+                        <p class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-green-500"></i> واتساب متاح</p>
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[var(--accent-coral)]"></i> الرياض، المملكة العربية السعودية</p>
+                        <div class="h-48 rounded-lg overflow-hidden mt-4">
+                            <img src="https://placehold.co/600x300/e0e8ff/0D2C6C?text=Riyadh+Location+Map" alt="Map" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-10 py-10 bg-[#07173f] text-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-6">
+            <div>
+                <div class="w-12 h-12 grid place-items-center rounded-xl bg-gradient-to-br from-[var(--accent-coral)] to-[var(--accent-orange-dark)] mb-3">
+                    <div class="needsbox-logo"><div class="needsbox-box"></div></div>
+                </div>
+                <p class="text-white/80">NeedsBoxes — كل ما تحتاجه… في صندوق واحد.</p>
+            </div>
+            <div>
+                <h4 class="font-extrabold mb-3">روابط</h4>
+                <ul class="space-y-2 text-white/85">
+                    <li><a href="#categories" class="hover:underline transition-colors duration-200">التصنيفات</a></li>
+                    <li><a href="#all-products" class="hover:underline transition-colors duration-200">المنتجات</a></li>
+                    <li><a href="#faq" class="hover:underline transition-colors duration-200">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-extrabold mb-3">الدفع والشحن</h4>
+                <p class="text-white/80">دفع آمن | توصيل سريع</p>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <img class="h-6 bg-white rounded p-0.5" src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Visa_2021.svg" alt="Visa" loading="lazy" decoding="async">
+                    <img class="h-6 bg-white rounded p-0.5" src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="Mastercard" loading="lazy" decoding="async">
+                    <img class="h-6 bg-white rounded p-0.5" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mada_Logo.svg" alt="Mada" loading="lazy" decoding="async">
+                    <img class="h-6 bg-white rounded p-0.5" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Apple_Pay_logo.svg" alt="Apple Pay" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div>
+                <h4 class="font-extrabold mb-3">النشرة البريدية</h4>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="بريدك الإلكتروني" class="flex-1 px-3 py-2 rounded-xl border text-black" aria-label="Email for newsletter"/>
+                    <button type="submit" class="px-4 py-2 rounded-xl text-[#07173f] bg-white font-bold">اشتراك</button>
+                </form>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-6 text-center text-white/70">© <span id="footer-year">2025</span> NeedsBoxes</div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/966573725600" class="salla-whatsapp-button fixed bottom-5 left-5 w-14 h-14 bg-[#25D366] flex items-center justify-center text-white text-3xl rounded-full shadow-lg z-50 hover:scale-110 transition-transform animate-pulse" target="_blank" aria-label="تواصل معنا عبر واتساب" style="min-width: 56px; min-height: 56px;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Mini Cart -->
+    <aside class="mini-cart-overlay" id="mini-cart-overlay"></aside>
+    <aside class="mini-cart" id="mini-cart" aria-label="سلة التسوق">
+        <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-white/10">
+            <h2 class="text-xl font-bold">سلة التسوق</h2>
+            <button id="mini-cart-close" class="text-gray-500 hover:text-red-500" aria-label="إغلاق السلة" style="min-width: 48px; min-height: 48px;"><i class="fas fa-times text-xl"></i></button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-4" id="mini-cart-body">
+            <p id="mini-cart-empty" class="text-gray-500 text-center py-10">سلتك فارغة حالياً.</p>
+        </div>
+        <div class="p-4 border-t border-gray-200 dark:border-white/10">
+            <div class="flex justify-between items-center font-bold text-lg mb-4">
+                <span>الإجمالي:</span>
+                <span id="mini-cart-total">0 ر.س</span>
+            </div>
+            <a href="#" class="block w-full text-center bg-gradient-to-l from-[var(--accent-coral)] to-[var(--accent-orange-dark)] text-white py-3 rounded-xl font-extrabold text-lg transition-all hover:from-[var(--accent-orange-dark)] hover:to-[var(--accent-coral)] shadow-nb hover:shadow-lg">إتمام الطلب</a>
+            <button id="mini-cart-continue" class="w-full text-center text-gray-600 dark:text-gray-300 py-2 mt-2" style="min-height: 48px;">متابعة التسوق</button>
+        </div>
+    </aside>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="نظرة سريعة">
+        <div class="modal-card">
+            <button class="modal-close-btn absolute top-3 left-3 bg-gray-100 dark:bg-gray-700 w-10 h-10 rounded-full text-lg z-20" onclick="closeQuickView()" aria-label="إغلاق" style="min-width: 48px; min-height: 48px;"><i class="fa-solid fa-xmark"></i></button>
+            <div class="grid md:grid-cols-2 gap-0">
+                <!-- Modal Gallery -->
+                <div class="p-4">
+                    <div class="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-700"><img id="modal-main-image" src="https://placehold.co/600x600/0D2C6C/ffffff?text=Product" alt="Product image" class="w-full h-80 object-cover" loading="lazy" decoding="async"></div>
+                    <!-- Tabs for media -->
+                    <div class="flex gap-2 border-b border-gray-200 dark:border-white/10 mt-2">
+                        <button class="modal-tab-btn active" data-tab-group="media" data-tab-target="#modal-image-panel">الصور</button>
+                        <button class="modal-tab-btn" data-tab-group="media" data-tab-target="#modal-video-panel" id="modal-video-tab">فيديو</button>
+                        <button class="modal-tab-btn" data-tab-group="media" data-tab-target="#modal-user-photos-panel">صور العملاء</button>
+                    </div>
+                    <!-- Media Panels -->
+                    <div class="mt-2">
+                        <div id="modal-image-panel" class="modal-tab-panel active">
+                            <div class="grid grid-cols-4 gap-2" id="modal-thumbnail-grid">
+                                <!-- Thumbnails injected here -->
+                            </div>
+                        </div>
+                        <div id="modal-video-panel" class="modal-tab-panel">
+                            <div class="rounded-2xl overflow-hidden aspect-video" id="video-container"><iframe id="modal-video-iframe" class="w-full h-full" src="" title="Product video" allowfullscreen></iframe></div>
+                        </div>
+                        <div id="modal-user-photos-panel" class="modal-tab-panel">
+                            <div class="grid grid-cols-4 gap-2" id="modal-user-photos-grid">
+                                <!-- User photos injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Details -->
+                <div class="p-4 space-y-4">
+                    <h3 id="modal-title" class="text-2xl font-extrabold"></h3>
+                    <div id="modal-rating"></div>
+                    <div id="modal-price" class="modal-price text-2xl font-extrabold"></div>
+                    <div class="border-t pt-3">
+                        <div class="flex gap-3">
+                            <button id="modal-add-to-cart" class="px-4 py-2 rounded-xl text-white salla-add-to-cart" data-product-id="" style="min-height: 48px;">أضف للسلة</button>
+                            <button class="px-4 py-2 rounded-xl border dark:border-white/10" onclick="closeQuickView()" style="min-height: 48px;">إغلاق</button>
+                        </div>
+                    </div>
+                    <!-- Tabs for info -->
+                    <div class="mt-3">
+                        <div class="flex gap-4 border-b border-gray-200 dark:border-white/10 pb-2">
+                            <button class="modal-tab-btn active" data-tab-group="info" data-tab-target="#tab-description">الوصف</button>
+                            <button class="modal-tab-btn" data-tab-group="info" data-tab-target="#tab-specs">المواصفات</button>
+                            <button class="modal-tab-btn" data-tab-group="info" data-tab-target="#tab-shipping">الشحن</button>
+                        </div>
+                        <div class="mt-3 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                            <div id="tab-description" class="modal-tab-panel active"></div>
+                            <div id="tab-specs" class="modal-tab-panel whitespace-pre-line"></div>
+                            <div id="tab-shipping" class="modal-tab-panel"></div>
+                        </div>
+                    </div>
+                    <!-- Modal Upsell -->
+                    <div class="mt-3 p-3 rounded-xl bg-[var(--accent-ultralight)] dark:bg-gray-700">
+                        <h4 class="font-bold mb-2">يُشترى معه عادة:</h4>
+                        <div id="modal-upsell-item" class="flex items-center gap-3">
+                            <!-- Upsell item injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-[999] bg-black text-white/95 px-4 py-2 rounded-xl opacity-0 translate-y-2 transition-all shadow-lg dark:bg-white dark:text-black">
+        تمت الإضافة إلى السلة
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // ===== Helpers =====
+        const $ = (s, c=document) => c.querySelector(s);
+        const $$ = (s, c=document) => Array.from(c.querySelectorAll(s));
+        // Format number to SAR currency
+        const SAR = v => new Intl.NumberFormat('ar-SA',{style:'currency',currency:'SAR', minimumFractionDigits: 0, maximumFractionDigits: 0}).format(v);
+
+        // ===== State =====
+        let CART = [];
+        let currentCat = 'all';
+
+        // ===== Product Data (merged from all files) =====
+        const PRODUCTS = [
+            {
+                id:'p1', 
+                name:'مايكروفون استوديو احترافي', 
+                cat:'audio', 
+                price:499, 
+                old:599, 
+                rating:5, 
+                pop: 95, 
+                date: '2025-10-01', 
+                img:'https://cdn.salla.sa/mQbARj/HUKUwBOlCCAEPURLdgbYLUEwM8u0dR9vinh2Xowv.jpg', 
+                featured:true, 
+                stock:true, 
+                desc:'مايكروفون هجين XLR/USB بهيكل معدني، يوفر وضوحًا بجودة الاستوديو لتسجيلاتك.', 
+                specs:'نمط الالتقاط: كارديويد\nواجهة: USB/XLR\nهيكل معدني بالكامل', 
+                shipping:'يشحن خلال 48 ساعة داخل المملكة.',
+                video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                userImages: ["https://placehold.co/100x100/ccc/333?text=User1", "https://placehold.co/100x100/ccc/333?text=User2"]
+            },
+            {
+                id:'p2', 
+                name:'سماعة M90 Pro اللاسلكية', 
+                cat:'audio', 
+                price:40, 
+                old:75, 
+                rating:4.7, 
+                pop: 98, 
+                date: '2025-09-15', 
+                img:'https://cdn.salla.sa/mQbARj/2w1sSRRfycRdql1J5TMiIlC1EiOaFAGM8dkCu4yT.jpg', 
+                featured:true, 
+                stock:true, 
+                desc:'بلوتوث 5.3، بطارية 30 ساعة، وسائد أذن مريحة للاستخدام اليومي.', 
+                specs:'بلوتوث 5.3\nعمر بطارية 30 ساعة\nشاشة LED لمعرفة الشحن', 
+                shipping:'توصيل سريع مع إمكانية الاسترجاع خلال 7 أيام.',
+                video: null,
+                userImages: ["https://placehold.co/100x100/ccc/333?text=User3"]
+            },
+            {
+                id:'p3', 
+                name:'إضاءة حلقة LED 18 بوصة', 
+                cat:'lighting', 
+                price:199, 
+                old:249, 
+                rating:4.5, 
+                pop: 88, 
+                date: '2025-08-20', 
+                img:'https://cdn.salla.sa/mQbARj/fk0NPtu5Z6btX8EwRoM0roGkv2gS0Hs0QcuFtUza.jpg', 
+                featured:false, 
+                stock:true, 
+                desc:'درجة حرارة لون قابلة للتعديل، حامل متين، مثالية للتصوير والبث المباشر.', 
+                specs:'18 بوصة\nتحكم بدرجة اللون\nحامل ثلاثي متضمن', 
+                shipping:'يشحن خلال 48 ساعة.',
+                video: null,
+                userImages: []
+            },
+            {
+                id:'p4', 
+                name:'شاحن 65 واط GaN', 
+                cat:'charging', 
+                price:149, 
+                old:null, 
+                rating:5, 
+                pop: 92, 
+                date: '2025-10-05', 
+                img:'https://cdn.salla.sa/mQbARj/products/Jie3nJEgFyejMA6aw02lgKxWLbNcLnClGBSfWOTt.jpg', 
+                featured:true, 
+                stock:true, 
+                desc:'شحن سريع USB-C PD لأجهزة اللابتوب، التابلت، والهواتف.', 
+                specs:'قدرة 65W\nتقنية GaN\n3 منافذ (2 USB-C, 1 USB-A)', 
+                shipping:'توصيل خلال 48–72 ساعة.',
+                video: null,
+                userImages: ["https://placehold.co/100x100/ccc/333?text=User4"]
+            },
+            {
+                id:'p5', 
+                name:'منظم كابلات مكتبي', 
+                cat:'accessory', 
+                price:39, 
+                old:null, 
+                rating:4.2, 
+                pop: 70, 
+                date: '2025-07-10', 
+                img:'https://cdn.salla.sa/mQbARj/ljwqCC4leNFTRQiW4pngTvfDqhqNL5oFi5M1WdzN.jpg', 
+                featured:false, 
+                stock:true, 
+                desc:'حافظ على مساحة عملك نظيفة وخالية من تشابك الكابلات.', 
+                specs:'مواد مطاطية عالية الجودة\nلاصق 3M قوي', 
+                shipping:'يشحن مع الطلب.',
+                video: null,
+                userImages: []
+            },
+            {
+                id:'p6', 
+                name:'موزع USB-C 7 في 1', 
+                cat:'accessory', 
+                price:229, 
+                old:279, 
+                rating:4.8, 
+                pop: 85, 
+                date: '2025-09-01', 
+                img:'https://cdn.salla.sa/mQbARj/7qMwE9dY3fklDvQzEZmbTnHssdB1TL9KO7bQOd8R.png', 
+                featured:true, 
+                stock:true, 
+                desc:'HDMI 4K، قارئ بطاقات SD/TF، منفذين USB-A، ومنفذ شحن USB-C PD — هيكل معدني مدمج.', 
+                specs:'HDMI 4K @ 30Hz\nقارئ بطاقات SD/TF\nUSB-C PD 100W', 
+                shipping:'يشحن خلال 48 ساعة.',
+                video: null,
+                userImages: ["https://placehold.co/100x100/ccc/333?text=User5", "https://placehold.co/100x100/ccc/333?text=User6"]
+            },
+            {
+                id:'p7', 
+                name:'مصباح LED صغير', 
+                cat:'lighting', 
+                price:119, 
+                old:null, 
+                rating:4.1, 
+                pop: 60, 
+                date: '2025-06-15', 
+                img:'https://cdn.salla.sa/mQbARj/NT8o24OnosrROMJy00C4t70j71MfWCjenltrPNi0.jpg', 
+                featured:false, 
+                stock:false, 
+                desc:'حجم الجيب، شحن USB-C، سطوع قابل للتعديل.', 
+                specs:'محمول\nUSB-C\nسطوع 500 لومن', 
+                shipping:'قد يتأخر الشحن عند نفاد المخزون.',
+                video: null,
+                userImages: []
+            },
+            {
+                id:'p8', 
+                name:'ذراع مايكروفون استوديو', 
+                cat:'accessory', 
+                price:89, 
+                old:119, 
+                rating:4.3, 
+                pop: 75, 
+                date: '2025-08-01', 
+                img:'https://cdn.salla.sa/mQbARj/72TtGQyBMvBC7H9FDnZMHMNz4YrcFAM87I38rhGC.jpg', 
+                featured:false, 
+                stock:true, 
+                desc:'نوابض صامتة، مشبك تثبيت قوي، مثالي للمايكروفونات والكاميرات.', 
+                specs:'ذراع قابل للتعديل\nقاعدة تثبيت قوية\nإدارة للكابلات مدمجة', 
+                shipping:'يشحن خلال 48 ساعة.',
+                video: null,
+                userImages: []
+            }
+        ];
+
+        // Data for Offers Swiper
+        const OFFERS = [
+            { title: 'خصم 30% على الإكسسوارات', badge:'عرض اليوم', image:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2070&auto=format&fit=crop' },
+            { title: 'حزمة تصوير للمبتدئين', badge:'باقة', image:'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2070&auto=format&fit=crop' },
+            { title: 'شواحن GaN فائقة السرعة', badge:'جديد', image:'https://images.unsplash.com/photo-1618365908648-e71bd5716cba?q=80&w=2070&auto=format&fit=crop' }
+        ];
+
+        // === UI Builders ===
+        
+        // Generates star rating HTML
+        function star(n){let o=''; for(let i=1;i<=5;i++){o += `<i class="fa-${i<=n?'solid':'regular'} fa-star text-sm"></i>`} return `<div class="text-amber-400" aria-label="Rating ${n} out of 5">${o}</div>`}
+
+        // Generates HTML for a single product card - UPDATED
+        function productCard(p){
+            const old = p.old? `<span class="line-through text-gray-500 mr-2">${SAR(p.old)}</span>`:'';
+            const stockBadge = p.stock? '' : `<span class="out-of-stock-badge">غير متوفر</span>`;
+            return `<li class="salla-product-card group ${p.stock?'':'out-of-stock'}" data-aos="fade-up">
+                <div class="salla-product-image relative">
+                    <img src="${p.img}" alt="${p.name}" class="w-full h-[250px] object-cover" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D2C6C/ffffff?text=Product';"/>
+                    ${stockBadge}
+                    <span class="salla-product-badge absolute top-3 left-3 text-xs font-extrabold px-2 py-1 rounded-lg">${p.featured?'مميز':'جديد'}</span>
+                </div>
+                <div class="p-4 space-y-3">
+                    <h3 class="font-bold line-clamp-2 h-12">${p.name}</h3>
+                    ${star(p.rating||4)}
+                    <div class="flex items-baseline gap-2"><span class="text-[var(--primary-dark)] dark:text-white font-extrabold text-lg">${SAR(p.price)}</span>${old}</div>
+                    <!-- Action buttons - always visible -->
+                    <div class="flex items-center gap-2">
+                        <button class="salla-add-to-cart flex-1 py-2 rounded-xl text-white text-center transition-all duration-300" data-add="${p.id}" ${p.stock?'':'disabled'} aria-label="Add ${p.name} to cart" style="min-height: 48px;">
+                            <i class="fa-solid fa-cart-plus ml-1"></i> أضف إلى السلة
+                        </button>
+                        <button class="w-10 h-10 rounded-xl border dark:border-white/10 dark:bg-gray-700 flex items-center justify-center transition-colors duration-200 hover:border-[var(--accent-coral)] hover:text-[var(--accent-coral)]" aria-label="Add ${p.name} to wishlist" style="min-width: 48px; min-height: 48px;">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-xl border dark:border-white/10 dark:bg-gray-700 flex items-center justify-center transition-colors duration-200 hover:border-[var(--accent-coral)] hover:text-[var(--accent-coral)]" data-qv="${p.id}" aria-label="Quick view ${p.name}" style="min-width: 48px; min-height: 48px;">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </li>`;
+        }
+
+        // Renders featured products
+        function renderFeatured(){ 
+            const grid=$('#featured-grid'); 
+            if(!grid) return; 
+            grid.innerHTML = PRODUCTS.filter(p=>p.featured).slice(0,8).map(productCard).join(''); 
+        }
+
+        // Creates a skeleton card
+        function createSkeleton(){ return `<li class="skeleton h-[420px] rounded-2xl"></li>`; }
+
+        // Renders all products (with skeletons first)
+        function renderAll(){ 
+            const grid=$('#all-products-list'); 
+            if(!grid) return; 
+            grid.innerHTML=Array(8).fill(0).map(createSkeleton).join(''); 
+            grid.setAttribute('aria-busy','true'); 
+            setTimeout(()=>{ applyFiltersAndSort(); }, 350); 
+        }
+
+        // Applies filters and sorting to the main product grid
+        function applyFiltersAndSort(){
+            const grid=$('#all-products-list'); if(!grid) return;
+            
+            const min=parseFloat($('#priceMin')?.value||'0');
+            let max=parseFloat($('#priceMax')?.value||'999999');
+            if (isNaN(max)) max = 999999;
+            
+            let list = PRODUCTS.filter(p=> (currentCat==='all'||p.cat===currentCat) && p.price>=min && p.price<=max);
+            
+            const sort=$('#sortSelect')?.value;
+            if(sort==='priceAsc') list.sort((a,b)=>a.price-b.price);
+            if(sort==='priceDesc') list.sort((a,b)=>b.price-a.price);
+            if(sort==='rating') list.sort((a,b)=> (b.rating||0)-(a.rating||0));
+            if(sort==='new') list.sort((a,b)=> new Date(b.date) - new Date(a.date));
+            if(sort==='pop') list.sort((a,b)=> (b.pop||0)-(a.pop||0));
+            
+            grid.innerHTML = list.length ? list.map(productCard).join('') : `<p class="col-span-full text-center text-gray-500">لا توجد منتجات تطابق بحثك.</p>`;
+            grid.removeAttribute('aria-busy');
+            attachCardListeners(); // Re-attach listeners to new cards
+        }
+
+        // Renders the offers swiper
+        function renderOffers(){ 
+            const wrap=$('#offers-wrapper'); 
+            if(!wrap) return; 
+            wrap.innerHTML = OFFERS.map(o=>`<div class="swiper-slide">
+                <article class="rounded-2xl overflow-hidden border dark:border-white/10 bg-white dark:bg-gray-800 transform transition-transform hover:scale-[1.02] shadow-soft hover:shadow-nb">
+                    <div class="relative">
+                        <img src="${o.image}" alt="${o.title}" class="w-full h-52 object-cover" loading="lazy" decoding="async"/>
+                        <span class="absolute top-3 left-3 bg-gradient-to-r from-[var(--accent-coral)] to-[var(--accent-orange-dark)] text-white text-xs font-extrabold px-2 py-1 rounded-lg">${o.badge}</span>
+                    </div>
+                    <div class="p-4"><h3 class="font-extrabold">${o.title}</h3></div>
+                </article></div>`).join(''); 
+        }
+
+        // ===== Cart & Modal Logic =====
+        
+        // Updates the mini-cart UI
+        function updateMiniCart(){
+            const body=$('#mini-cart-body'); 
+            const totalEl=$('#mini-cart-total'); 
+            const empty=$('#mini-cart-empty');
+            const cartCountBadge = $('#cartCount');
+            
+            if(!CART.length){ 
+                body.innerHTML = `<p id="mini-cart-empty" class="text-gray-500 text-center py-10">سلتك فارغة حالياً.</p>`; 
+                totalEl.textContent=SAR(0); 
+                cartCountBadge.textContent = '0';
+                return; 
+            }
+            
+            empty?.remove();
+            let sum=0; 
+            let totalItems = 0;
+            body.innerHTML = CART.map(it=>{ 
+                sum += it.price*it.qty; 
+                totalItems += it.qty;
+                return `<div class="flex items-center justify-between gap-3 py-2 border-b dark:border-white/10">
+                    <div class="flex items-center gap-3"><img src="${it.img}" class="w-12 h-12 object-cover rounded-lg" alt="${it.name}" loading="lazy" decoding="async"/>
+                    <div><div class="font-bold text-sm">${it.name}</div><div class="text-xs">${SAR(it.price)} × ${it.qty}</div></div></div>
+                    <button class="text-red-500" data-del="${it.id}" aria-label="Remove ${it.name}" style="min-width: 48px; min-height: 48px;"><i class="fas fa-trash"></i></button>
+                </div>` 
+            }).join('');
+            
+            totalEl.textContent = SAR(sum);
+            cartCountBadge.textContent = totalItems;
+            
+            // Re-attach delete listeners
+            $$('[data-del]', body).forEach(b=> b.addEventListener('click', e=>{ 
+                const id=e.currentTarget.getAttribute('data-del'); 
+                CART = CART.filter(x=>x.id!==id); 
+                updateMiniCart(); 
+            }));
+        }
+
+        // Adds a product to the cart by ID
+        function addToCartById(id){ 
+            const p = PRODUCTS.find(x=>x.id===id); 
+            if(!p || !p.stock) {
+                showToast('المنتج غير متوفر حالياً', true);
+                return;
+            } 
+            const ex = CART.find(x=>x.id===id); 
+            if(ex) ex.qty+=1; 
+            else CART.push({id:p.id,name:p.name,price:p.price,img:p.img,qty:1}); 
+            
+            showToast('تمت إضافة المنتج إلى السلة'); 
+            updateMiniCart(); 
+            $('#cartBtn').classList.add('animate-cart-jiggle'); 
+            setTimeout(()=>$('#cartBtn').classList.remove('animate-cart-jiggle'), 550); 
+            $('#cartCount').textContent = CART.reduce((n,i)=>n+i.qty,0); 
+        }
+
+        // Attaches listeners to dynamically created cards
+        function attachCardListeners(){
+            $$('[data-add]').forEach(btn=> {
+                // Clear old listeners by cloning
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+                newBtn.addEventListener('click', e=>{ 
+                    addToCartById(e.currentTarget.getAttribute('data-add')); 
+                });
+            });
+            $$('[data-qv]').forEach(btn=> {
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+                newBtn.addEventListener('click', e=> {
+                    openQuickViewById(e.currentTarget.getAttribute('data-qv'))
+                }); 
+            });
+            $$('[data-cat-filter]').forEach(btn => {
+                btn.addEventListener('click', e=> {
+                    const cat = e.currentTarget.getAttribute('data-cat');
+                    currentCat = cat;
+                    $$('.product-filter-btn').forEach(b => b.classList.remove('active-filter'));
+                    $(`.product-filter-btn[data-cat="${cat}"]`).classList.add('active-filter');
+                    applyFiltersAndSort();
+                    const targetElement = $('#all-products');
+                    if(targetElement) targetElement.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        }
+
+        // Opens the Quick View modal with product data
+        function openQuickViewById(id){ 
+            const p=PRODUCTS.find(x=>x.id===id); 
+            if(!p) return; 
+            const modal=$('#quickViewModal');
+            
+            $('#modal-main-image').src = p.img; 
+            $('#modal-title').innerText = p.name;
+            $('#modal-rating').innerHTML = star(p.rating||4);
+            $('#modal-price').innerHTML = `${SAR(p.price)} ${p.old? `<span class='text-gray-400 text-base line-through mr-2'>${SAR(p.old)}</span>`:''}`;
+            
+            $('#tab-description').innerText = p.desc||'لا يوجد وصف متوفر.';
+            $('#tab-specs').innerText = p.specs||'لا توجد مواصفات متوفرة.';
+            $('#tab-shipping').innerText = p.shipping||'تطبق سياسات الشحن القياسية.';
+            
+            // Media Tabs
+            const videoTab = $('#modal-video-tab');
+            if (p.video) {
+                videoTab.style.display = 'block';
+                $('#modal-video-iframe').src = p.video;
+            } else {
+                videoTab.style.display = 'none';
+                $('#modal-video-iframe').src = '';
+            }
+            
+            const userPhotosGrid = $('#modal-user-photos-grid');
+            if (p.userImages && p.userImages.length > 0) {
+                userPhotosGrid.innerHTML = p.userImages.map(img => `<img src="${img}" class="w-full h-20 object-cover rounded-md" alt="User photo" loading="lazy" decoding="async">`).join('');
+            } else {
+                userPhotosGrid.innerHTML = `<p class="text-sm text-gray-500 col-span-4">لا توجد صور.</p>`;
+            }
+            
+            const thumbnailGrid = $('#modal-thumbnail-grid');
+            thumbnailGrid.innerHTML = `<img src="${p.img}" class="w-full h-20 object-cover rounded-md border-2 border-[var(--primary-dark)]" alt="Thumbnail" loading="lazy" decoding="async">`;
+            // Add more thumbnails if they exist in data
+            
+            // Upsell
+            const up = PRODUCTS.find(x=> x.cat===p.cat && x.id!==p.id);
+            $('#modal-upsell-item').innerHTML = up? `<img src='${up.img}' class='w-12 h-12 rounded-lg object-cover' alt='${up.name}' loading="lazy" decoding="async"/><div class='text-sm flex-1'><div class='font-bold'>قد يعجبك أيضًا: ${up.name}</div><div class='text-[var(--primary-dark)] dark:text-white font-extrabold'>${SAR(up.price)}</div></div> <button class="salla-add-to-cart text-white w-9 h-9 rounded-full bg-primary-dark hover:bg-accent-coral" data-add="${up.id}" aria-label="Add ${up.name} to cart" style="min-width: 48px; min-height: 48px;"><i class="fas fa-plus"></i></button>`: '<p class="text-sm text-gray-500">لا توجد منتجات مقترحة.</p>';
+            
+            $('#modal-add-to-cart').setAttribute('data-product-id', p.id);
+            
+            // Reset tabs
+            $$('.modal-tab-btn[data-tab-group="media"]').forEach(b=>b.classList.remove('active'));
+            $$('.modal-tab-btn[data-tab-target="#modal-image-panel"]').forEach(b=>b.classList.add('active'));
+            $$('.modal-tab-panel[id^="modal-"]').forEach(p=>p.classList.remove('active'));
+            $('#modal-image-panel').classList.add('active');
+            
+            $$('.modal-tab-btn[data-tab-group="info"]').forEach(b=>b.classList.remove('active'));
+            $$('.modal-tab-btn[data-tab-target="#tab-description"]').forEach(b=>b.classList.add('active'));
+            $$('.modal-tab-panel[id^="tab-"]').forEach(p=>p.classList.remove('active'));
+            $('#tab-description').classList.add('active');
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Closes the Quick View modal
+        function closeQuickView(){ 
+            const modal = $('#quickViewModal');
+            modal.classList.remove('active'); 
+            $('#modal-video-iframe').src = ''; // Stop video
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+        
+        // Modal Tab logic
+        $$(".modal-tab-btn").forEach(btn=> btn.addEventListener('click', e=>{ 
+            const group = e.currentTarget.getAttribute('data-tab-group');
+            $$(`.modal-tab-btn[data-tab-group="${group}"]`).forEach(b=>b.classList.remove('active')); 
+            e.currentTarget.classList.add('active'); 
+            $$(`.modal-tab-panel[id^="${group==='media'?'modal-':'tab-'}"]`).forEach(p=>p.classList.remove('active')); 
+            const t=e.currentTarget.getAttribute('data-tab-target'); 
+            $(t).classList.add('active'); 
+        }));
+
+        // Shows a toast notification
+        function showToast(msg, isError = false){ 
+            const t=$('#toast'); 
+            t.textContent=msg; 
+            t.style.backgroundColor = isError ? 'var(--danger)' : '#333';
+            if(document.body.classList.contains('dark') && !isError) t.style.backgroundColor = '#fff';
+            
+            t.style.opacity='1'; 
+            t.style.transform='translateY(0)'; 
+            setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateY(8px)'; }, 2000); 
+        }
+
+        // ===== Enhanced Mobile Navigation =====
+        function enhanceMobileNav() {
+            const header = document.querySelector('header');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll <= 0) {
+                    header.style.transform = 'translateY(0)';
+                    return;
+                }
+                
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    // Scroll down - hide header
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scroll up - show header
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScroll = currentScroll;
+            });
+        }
+
+        // ===== Enhanced Filter System =====
+        function enhanceFilters() {
+            const filterButtons = document.querySelectorAll('.product-filter-btn');
+            const priceInputs = document.querySelectorAll('#priceMin, #priceMax');
+            
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Add micro-interaction
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+            
+            // Price range visual feedback
+            priceInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    this.parentElement.style.borderColor = 
+                        this.value ? 'var(--accent-coral)' : '';
+                });
+            });
+            
+            // Real-time search with debounce
+            let searchTimeout;
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    applyFiltersAndSort();
+                }, 300);
+            });
+        }
+
+        // ===== Initialization =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+            
+            // --- INITIAL RENDER ---
+            renderOffers();
+            renderFeatured();
+            renderAll();
+            
+            // --- ENHANCED FEATURES ---
+            enhanceMobileNav();
+            enhanceFilters();
+            
+            // --- INTERACTIVITY ---
+            setupInteractions();
+            startCountdown();
+            $('#footer-year').textContent = new Date().getFullYear();
+
+            // Enhanced lazy loading
+            if ('IntersectionObserver' in window) {
+                const lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            const lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove('lazy');
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                document.querySelectorAll('img[loading="lazy"]').forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+
+        // Setup interactions
+        function setupInteractions() {
+            // Theme & Direction toggles
+            $('#dirToggle')?.addEventListener('click', () => {
+                const html = document.documentElement;
+                html.dir = html.dir === 'rtl' ? 'ltr' : 'rtl';
+            });
+            $('#themeToggle')?.addEventListener('click', () => {
+                const html = document.documentElement;
+                const isDark = html.getAttribute('data-theme') === 'dark';
+                
+                if (isDark) {
+                    html.removeAttribute('data-theme');
+                    document.body.classList.remove('dark');
+                    localStorage.setItem('darkMode', 'false');
+                    $('#themeToggle i').classList.remove('fa-sun');
+                    $('#themeToggle i').classList.add('fa-moon');
+                } else {
+                    html.setAttribute('data-theme', 'dark');
+                    document.body.classList.add('dark');
+                    localStorage.setItem('darkMode', 'true');
+                    $('#themeToggle i').classList.remove('fa-moon');
+                    $('#themeToggle i').classList.add('fa-sun');
+                }
+            });
+            
+            // Check initial dark mode
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.body.classList.add('dark');
+                $('#themeToggle i').classList.remove('fa-moon');
+                $('#themeToggle i').classList.add('fa-sun');
+            }
+
+            // Sidebar
+            const sidebarToggle = $('#sidebarToggle');
+            const sidebarClose = $('#sidebarClose');
+            const sidebarOverlay = $('#sidebarOverlay');
+            const sidebar = $('#sidebar');
+            
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            };
+            const closeSidebar = () => {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+            
+            if(sidebarToggle) sidebarToggle.addEventListener('click', toggleSidebar);
+            if(sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
+            if(sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+            $$('.sidebar-link').forEach(link => link.addEventListener('click', closeSidebar));
+            
+            // Mini Cart
+            $('#cartBtn')?.addEventListener('click', openMiniCart);
+            $('#mini-cart-close')?.addEventListener('click', closeMiniCart);
+            $('#mini-cart-overlay')?.addEventListener('click', closeMiniCart);
+            $('#mini-cart-continue')?.addEventListener('click', closeMiniCart);
+            
+            // Filters & Sort
+            $$('.product-filter-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    $$('.product-filter-btn').forEach(btn => btn.classList.remove('active-filter'));
+                    this.classList.add('active-filter');
+                    currentCat = this.getAttribute('data-cat');
+                    applyFiltersAndSort();
+                });
+            });
+            $('#sortSelect').addEventListener('change', applyFiltersAndSort);
+            
+            // Quick view add-to-cart
+            $('#modal-add-to-cart')?.addEventListener('click', (e)=>{
+                const id=e.currentTarget.getAttribute('data-product-id'); 
+                if(id){ 
+                    addToCartById(id); 
+                    closeQuickView(); 
+                }
+            });
+
+            // Init Swipers
+            initSwipers();
+        }
+
+        // Mini Cart functions
+        function openMiniCart() {
+            $('#mini-cart').classList.add('active');
+            $('#mini-cart-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            updateMiniCart();
+        }
+
+        function closeMiniCart() {
+            $('#mini-cart').classList.remove('active');
+            $('#mini-cart-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Swiper initialization
+        function initSwipers() {
+            // Offers Swiper
+            new Swiper('.offers-swiper', {
+                slidesPerView: 1.2,
+                spaceBetween: 12,
+                breakpoints: {
+                    640: { slidesPerView: 2.2 },
+                    1024: { slidesPerView: 3.2 }
+                },
+                pagination: {
+                    el: '.offers-swiper .swiper-pagination',
+                    clickable: true
+                }
+            });
+        }
+
+        // Countdown timer
+        function startCountdown(){
+            const end=new Date();
+            end.setHours(23,59,59,999);
+            const ids=['d','h','m','s'];
+            const int=setInterval(()=>{
+                const now=new Date();
+                const t=end-now;
+                if(t<=0){
+                    clearInterval(int);
+                    ids.forEach(id=>$('#'+id).textContent='00');
+                    return;
+                }
+                const d=Math.floor(t/86400000),
+                    h=Math.floor((t%86400000)/3600000),
+                    m=Math.floor((t%3600000)/60000),
+                    s=Math.floor((t%60000)/1000);
+                $('#d').textContent=String(d).padStart(2,'0');
+                $('#h').textContent=String(h).padStart(2,'0');
+                $('#m').textContent=String(m).padStart(2,'0');
+                $('#s').textContent=String(s).padStart(2,'0');
+            },1000);
+        }
+    </script>
+</body>
+</html>
