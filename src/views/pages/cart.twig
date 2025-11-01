@@ -51,9 +51,7 @@
 {% block content %}
     <div class="container">
         {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
-        <nav class="breadcrumbs w-full py-5">
-            <salla-breadcrumb></salla-breadcrumb>
-        </nav>
+        
         <h1 class="sr-only">{{ trans('blocks.header.cart') }}</h1>
         <salla-conditional-offer></salla-conditional-offer>
         <div class="pt-5 flex flex-col items-start lg:flex-row pb-6 lg:pb-20">
