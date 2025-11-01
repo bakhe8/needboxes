@@ -44,8 +44,9 @@ npm run watch
 # Production bundle
 npm run production
 
-# Salla preview (requires authenticated CLI session)
-salla theme preview
+# Salla preview (requires authenticated CLI session and PHP runtime)
+# Install PHP once (WSL/Ubuntu example): sudo apt install php php-curl php-json php-xml
+salla theme preview --store "<demo-store>"
 ```
 
 ## Revised Directive
@@ -104,6 +105,13 @@ deepseek.html      # Visual design reference
 | `npm run production` | Production build (minified assets) |
 | `npm run prod` | Alias for `npm run production` |
 | `npm test` | Placeholder (fails intentionally) |
+
+## Releases & QA Artifacts
+
+- **Current stable:** `v1.0.0-NEEDSBOXES`
+- **Latest QA verified build:** `v1.0.5-qa-verified`  
+  See `docs/QA_LIVE_PREVIEW.md` for the full walkthrough notes and replay links.
+- All verification steps are tracked in `docs/VERIFICATION_CHECKLIST.md`.
 
 ## Contribution Workflow
 
