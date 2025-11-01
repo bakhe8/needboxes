@@ -1,11 +1,17 @@
 {
+    "id": 1469728385,
     "name": {
-        "ar": "رائد",
-        "en": "Theme Raed"
+      "ar": "نيدز بوكس",
+      "en": "Needboxes Theme"
     },
-    "repository": "https://github.com/SallaApp/theme-raed",
-    "author_email": "support@salla.sa",
-    "features": [
+    "repository": "https://github.com/bakhe8/needboxes",
+    "author_email": "bakheet@gmail.com",
+    "support_url": "https://needsboxes.com/",
+    "description": {
+      "ar": "نسخة مخصصة من ثيم رائد بطابع وهوية NeedsBoxes، مطورة لتجربة تسوق حديثة وألوان وهوية العلامة.",
+      "en": "A customized version of the Raed theme with NeedsBoxes identity, optimized for a modern branded shopping experience."
+    },
+        "features": [
         "mega-menu",
         "fonts",
         "color",
