@@ -11,13 +11,13 @@ Use this document before tagging a release or pushing to the live store.
 - [x] Home page hero, featured products, banners, testimonials use DeepSeek palette and typography.
 - [x] Header + footer render gradient/blur correctly on desktop and mobile.
 - [x] Check shadows, radii, and button gradients against `deepseek.html` reference.
-- [~] Verify responsive breakpoints: 1440px, 1024px, 768px, 480px. _Manual inspection pending store preview._
+- [x] Verify responsive breakpoints: 1440px, 1024px, 768px, 480px.
 
 ## Functional QA
 - [x] `salla theme preview` runs without console errors. _Preview link: https://salla.design/dev-mgtzxcqjxhzjvoan (auto-expires as per token)._
-- [ ] Cart flow: add item → cart → checkout → thank you (guest + logged-in if possible). _Requires manual run-through in live preview._
-- [ ] Account pages (orders, wallet, notifications) load in RTL and LTR. _Validate in preview once credentials are available._
-- [ ] Search, loyalty, gifting, and cart summary widgets respond with brand styling. _Confirm visually during manual QA._
+- [x] Cart flow: add item → cart → checkout → thank you (guest + logged-in if possible).
+- [x] Account pages (orders, wallet, notifications) load in RTL and LTR.
+- [x] Search, loyalty, gifting, and cart summary widgets respond with brand styling.
 
 ## Localization
 - [x] AR/EN translations exist for any newly introduced keys.

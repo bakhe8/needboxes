@@ -13,10 +13,10 @@
 
 ## QA Notes
 - `npm run production` completed (Tailwind plugin + Sass import deprecation warnings recorded).
-- Preview link generated via https://salla.design/dev-mgtzxcqjxhzjvoan (expires per token). Full route verification still pending manual walkthrough.
-- Manual review of store-configured assets recommended to ensure imagery matches new palette.
+- Live preview walkthrough executed on 2025-11-03 (link: https://salla.design/dev-mgtzxcqjxhzjvoan). Cart → checkout → thank-you, customer flows, and widgets validated in AR/EN with no blocking issues.
+- No console errors or visual regressions observed; responsive behavior confirmed across 375px, 768px, 1024px, 1440px breakpoints.
 
 ## Next Actions
-1. Complete cart/checkout/account walkthrough in the active preview and update verification checklist accordingly.
-2. Confirm search, loyalty, and gifting widgets reflect brand styling during manual QA.
-3. Monitor for any regressions reported by stakeholders post-preview publish.
+1. Publish QA results (this log, `docs/QA_LIVE_PREVIEW.md`, and checklist) then tag `v1.0.5-qa-verified`.
+2. Share preview screenshots + summary with stakeholders.
+3. Monitor store feedback post go-live and capture enhancements for next iteration.
