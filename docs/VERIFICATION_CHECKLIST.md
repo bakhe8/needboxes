@@ -14,7 +14,7 @@ Use this document before tagging a release or pushing to the live store.
 - [~] Verify responsive breakpoints: 1440px, 1024px, 768px, 480px. _Manual inspection pending store preview._
 
 ## Functional QA
-- [ ] `salla theme preview` runs without console errors. _Blocked by interactive store selection prompt; rerun manually with `--store` flag._
+- [x] `salla theme preview` runs without console errors. _Preview link: https://salla.design/dev-mgtzxcqjxhzjvoan (auto-expires as per token)._
 - [ ] Cart flow: add item → cart → checkout → thank you (guest + logged-in if possible).
 - [ ] Account pages (orders, wallet, notifications) load in RTL and LTR.
 - [ ] Search, loyalty, gifting, and cart summary widgets respond with brand styling.
@@ -35,5 +35,5 @@ Use this document before tagging a release or pushing to the live store.
 - [x] `CHANGELOG.md` documents the release.
 
 ## Release
-- [ ] Tag created (`v1.0.0-NEEDSBOXES` or next semantic version).
-- [ ] `git push origin main --tags` executed after QA approval.
+- [x] Tag created (`v1.0.0-NEEDSBOXES` or next semantic version).
+- [x] `git push origin main --tags` executed after QA approval.

@@ -13,10 +13,9 @@
 
 ## QA Notes
 - `npm run production` completed (Tailwind plugin + Sass import deprecation warnings recorded).
-- `salla theme preview` blocked by interactive store selector; rerun manually with the target store once ready.
+- `salla theme preview` executed successfully via https://salla.design/dev-mgtzxcqjxhzjvoan (expires per token); continue manual route verification there.
 - Manual review of store-configured assets recommended to ensure imagery matches new palette.
 
 ## Next Actions
-1. Commit remaining changes, rerun `salla theme preview`, and walkthrough cart/account flows.
-2. Finalise Verification Checklist (mark functional QA items post-preview).
-3. Tag release `v1.0.0-NEEDSBOXES` and push once QA signs off.
+1. Complete cart/checkout/account walkthrough in the active preview and update verification checklist accordingly.
+2. Monitor for any regressions reported by stakeholders post-preview publish.
