@@ -1,0 +1,23 @@
+<!-- Offers Swiper + Countdown -->
+<section id="offers" class="py-10">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
+            <h2 class="text-2xl font-extrabold salla-section-title">عروض اليوم</h2>
+            <div id="countdown" class="flex items-center gap-2 text-sm" aria-label="Time left for offers">
+                <span class="px-2 py-1 rounded bg-gray-100 dark:bg-gray-700" id="d">00</span>يوم
+                <span class="px-2 py-1 rounded bg-gray-100 dark:bg-gray-700" id="h">00</span>ساعة
+                <span class="px-2 py-1 rounded bg-gray-100 dark:bg-gray-700" id="m">00</span>دقيقة
+                <span class="px-2 py-1 rounded bg-gray-100 dark:bg-gray-700" id="s">00</span>ثانية
+            </div>
+        </div>
+        <div class="swiper offers-swiper">
+            <div class="swiper-wrapper" id="offers-wrapper">
+                <!-- Skeletons for offers -->
+                <div class="swiper-slide"><div class="skeleton h-64 rounded-2xl"></div></div>
+                <div class="swiper-slide"><div class="skeleton h-64 rounded-2xl"></div></div>
+                <div class="swiper-slide"><div class="skeleton h-64 rounded-2xl"></div></div>
+            </div>
+            <div class="swiper-pagination mt-4 relative"></div>
+        </div>
+    </div>
+</section>

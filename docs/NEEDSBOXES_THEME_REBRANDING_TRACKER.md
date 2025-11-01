@@ -4,23 +4,22 @@
 
 | Section | Status | Notes |
 |----------|---------|-------|
-| **Layouts** | ⚠️ | `master.twig` updated with new header/footer structure and fonts. Layout partials review completed (directory not found). |
-| **Pages** | ✅ | `index.twig` (Home page), `cart.twig`, `product/single.twig`, `brands/index.twig`, `brands/single.twig`, `customer/notifications.twig`, `customer/profile.twig`, `customer/wallet.twig`, `customer/wishlist.twig`, `customer/orders/index.twig`, `customer/orders/single.twig`, and `checkout.twig` rebranding completed. |
-| **Components** | ✅ | `header.twig` and `footer.twig` replaced with new design; dynamic parts re-introduced. All component SCSS files refactored. Core components (`hero.twig`, `products-slider.twig`, `featured-products-style1.twig`, banner components, `brands.twig`) reviewed and aligned. |
-| **Assets & Styles** | ✅ | SCSS cleanup for `02-generic` is complete. All component SCSS files refactored. JS files reviewed. Image integration skipped as per user's instruction. |
-| **Config & Build** | ✅ | All configuration files (`package.json`, `tailwind.config.js`, `postcss.config.js`, `twilight.json`, `webpack.config.js`) are updated and aligned. |
-| **Docs & Meta** | ✅ | `README.md` and `CHANGELOG.md` have been updated. Tracker and update log created. |
+| **Layouts** | ❌ | Re-audit in progress. Raed baseline restoration and brand alignment pending. |
+| **Pages** | ❌ | Full page-by-page comparison against Raed baseline pending. |
+| **Components** | ❌ | Component inventory reset; requires verification of Twig logic and visual tokens. |
+| **Assets & Styles** | ❌ | Token system and Tailwind config to be revalidated against deepseek guidelines. |
+| **Config & Build** | ⚠️ | Toolchain matches Raed baseline; needs brand-specific adjustments review. |
+| **Docs & Meta** | ⚠️ | Directive documents being refreshed; awaiting Revised Directive insertion. |
 
 ## Summary Notes
 
-- Completed the rebranding of `index.twig` (Home page), `cart.twig`, `product/single.twig`, `brands/index.twig`, `brands/single.twig`, and all customer pages (`notifications.twig`, `profile.twig`, `wallet.twig`, `wishlist.twig`, `orders/index.twig`, `orders/single.twig`).
-- Created and rebranded `checkout.twig` and added its localization keys.
-- Completed the review and alignment of core components: `hero.twig`, `products-slider.twig`, `featured-products-style1.twig`, banner components (`enhanced-square-banners.twig`, `fixed-banner.twig`, `square-photos.twig`), and `brands.twig`.
-- Finalized refactoring of all remaining SCSS files in the `02-generic` directory (`common.scss`, `ltr.scss`, `rtl.scss`, `tooltip.scss`), ensuring logical CSS properties for RTL/LTR support and replacing hardcoded values with brand tokens.
-- Updated `home.js` with the JavaScript logic from `deepseek.html` to support the new home page functionality.
-- Reviewed all JavaScript files in `src/assets/js/` and `src/assets/js/partials/` for Raed-specific logic, comments, or unused scripts. No Raed-specific logic or unused scripts were found.
-- Image integration has been skipped as per user's instruction.
+- Restored Raed baseline Twig/layout structure to ensure logic parity prior to rebranding.
+- Backed up existing `src/views` directory to `src/views_backup_2025-11-03` for reference before remediation.
+- Pending: Insert Revised Directive from master README and rebuild documentation set per new order.
 
 ## Next Steps
 
-- Run `salla theme preview` and verify all major routes, RTL/LTR layouts, and mobile/desktop viewports.
+- Compare NEEDSBOXES main vs secondary history to identify required merges once credentials allow.
+- Reapply DeepSeek brand tokens via CSS/Tailwind without altering Raed Twig logic.
+- Rebuild localization files referencing Twig variables only (no hard-coded Arabic/English strings).
+- Execute visual QA and Salla preview once rebranding passes Twig parity checks.

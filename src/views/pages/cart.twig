@@ -51,7 +51,9 @@
 {% block content %}
     <div class="container">
         {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
-        
+        <nav class="breadcrumbs w-full py-5">
+            <salla-breadcrumb></salla-breadcrumb>
+        </nav>
         <h1 class="sr-only">{{ trans('blocks.header.cart') }}</h1>
         <salla-conditional-offer></salla-conditional-offer>
         <div class="pt-5 flex flex-col items-start lg:flex-row pb-6 lg:pb-20">
@@ -78,7 +80,7 @@
 											{% endif %}
 
                                             <!-- free product ribbon -->
-                                            <div class="free-ribbon absolute top-[11px] right-[-38px] w-32 bg-danger text-white text-xs font-bold text-center py-1 rotate-45 shadow-md {{ item.price.getMoney().amount == 0 ? '' : 'hidden' }}">
+                                            <div class="free-ribbon absolute top-[11px] right-[-38px] w-32 bg-red-600 text-white text-xs font-bold text-center py-1 rotate-45 shadow-md {{ item.price.getMoney().amount == 0 ? '' : 'hidden' }}">
                                                 {{ trans('pages.loyalty_program.free_product') }}
                                             </div>
                                             <!-- end free product ribbon -->
@@ -91,7 +93,7 @@
 
                                             <span class="text-sm text-gray-500 line-through item-regular-price {{ item.offer ? '' : 'hidden' }}" >{{ item.product_price|money }}</span>
                                             <span class="text-sm text-gray-500 line-through item-original-price {{ item.is_on_sale ? '' : 'hidden' }}" id="original_price">{{ item.original_price|money }}</span>
-                                            <span class="item-price {{ item.has_discount ?  'text-danger' : 'text-sm text-gray-500' }}" id="has_discount">{{ item.price|money }}</span>
+                                            <span class="item-price {{ item.has_discount ?  'text-red-800' : 'text-sm text-gray-500' }}" id="has_discount">{{ item.price|money }}</span>
                                             
                                             {% if item.weight_label %}
                                             <p class="text-sm text-gray-500 "> {{ trans('pages.products.weight') }}
@@ -174,7 +176,7 @@
             <!-- sidebar -->
             {% if cart.items|length %}
                 <div class="sticky top-24 w-full lg:w-96 rtl:lg:mr-8 ltr:lg:ml-8">
-                    <div class="shadow-soft bg-white p-5 xs:p-7 rounded-md mb-5 relative {{ cart.free_shipping_bar ? '' : 'hidden' }}" id="free-shipping">
+                    <div class="shadow-default bg-white p-5 xs:p-7 rounded-md mb-5 relative {{ cart.free_shipping_bar ? '' : 'hidden' }}" id="free-shipping">
                         <div class="flex rtl:space-x-reverse space-x-3 items-center">
                             <i class="bg-primary text-white rounded-icon sicon-shipping-fast {{ theme.is_rtl ? 'flip-x':'' }}"></i>
                             {% set is_free=cart.free_shipping_bar.has_free_shipping %}
@@ -197,7 +199,7 @@
                         </div>
                     </div>
                     {% if loyalty and user.loyalty_points %}
-                        <div class="shadow-soft mb-5 rounded-md p-3 xs:p-7 bg-white">
+                        <div class="shadow-default mb-5 rounded-md p-3 xs:p-7 bg-white">
                             <salla-loyalty customer-points='{{ user.loyalty_points }}'
                                 prize-points='{{ loyalty.prize.points }}'
                                 prize-title='{{ loyalty.prize.title }}'
@@ -205,11 +207,11 @@
                         </div>
                     {% endif %}
 
-                    <div id="cart-gifting" class="shadow-soft bg-white xs:p-2 rounded-md mb-5 relative  {{gift.enabled ? '' : 'hidden' }}">
+                    <div id="cart-gifting" class="shadow-default bg-white xs:p-2 rounded-md mb-5 relative  {{gift.enabled ? '' : 'hidden' }}">
                         <salla-gifting id="salla-gifting" class="mt-5" widget-title="{{ trans("pages.cart.gift_widget_title") }}"  widget-subtitle="{{ gift.text }}" class="mt-5" {{gift.type}}-products  vertical></salla-gifting>
                     </div>
 
-                    <div class="shadow-soft bg-white p-5 xs:p-7 rounded-md mb-5 relative transition-height duration-1000">
+                    <div class="shadow-default bg-white p-5 xs:p-7 rounded-md mb-5 relative transition-height duration-1000">
                         <h2 class="font-bold text-sm mb-5">{{ trans('pages.cart.summary') }}</h2>
 
                         <div class="flex justify-between text-sm mb-5">
@@ -250,7 +252,7 @@
                                         <i class="sicon-cancel icon text-xl w-8"></i>
                                     </salla-button>
                                 </div>
-                                <span class="text-xs text-danger" id="coupon-error"></span>
+                                <span class="text-xs text-red-700" id="coupon-error"></span>
                             </div>
                         {% endif %}
 

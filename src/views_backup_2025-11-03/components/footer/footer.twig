@@ -1,0 +1,32 @@
+<footer class="mt-10 py-10 bg-[#07173f] text-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 grid md:grid-cols-5 gap-6">
+            <div>
+                <div class="w-12 h-12 grid place-items-center rounded-xl bg-gradient-to-br from-[var(--accent-coral)] to-[var(--accent-orange-dark)] mb-3">
+                    <div class="needsbox-logo"><div class="needsbox-box"></div></div>
+                </div>
+                <p class="text-white/80">NeedsBoxes — كل ما تحتاجه… في صندوق واحد.</p>
+            </div>
+            <div>
+                <h4 class="font-extrabold mb-3">روابط</h4>
+                <salla-menu source="footer"></salla-menu>
+            </div>
+            <div>
+                <h4 class="font-extrabold mb-3">الدفع والشحن</h4>
+                <p class="text-white/80">دفع آمن | توصيل سريع</p>
+                <salla-payments></salla-payments>
+            </div>
+            <div>
+                <h4 class="font-extrabold mb-3">النشرة البريدية</h4>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="بريدك الإلكتروني" class="flex-1 px-3 py-2 rounded-xl border text-black" aria-label="Email for newsletter"/>
+                    <button type="submit" class="px-4 py-2 rounded-xl text-[#07173f] bg-white font-bold">اشتراك</button>
+                </form>
+            </div>
+                    <div>
+                <h4 class="font-extrabold mb-3">تواصل معنا</h4>
+                <salla-contacts></salla-contacts>
+                <salla-social></salla-social>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-6 text-center text-white/70">{% hook 'copyright' %}</div>
+    </footer>

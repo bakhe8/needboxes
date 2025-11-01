@@ -9,8 +9,8 @@
   }
 
   .form-select, select {
-    background-position-inline-start: 0.5rem;
-    padding-inline-end: 12px;
+    background-position: left 0.5rem center;
+    padding-right: 12px;
   }
 
   .fix-align {
@@ -22,7 +22,7 @@
     &-months {
       .numInputWrapper {
         .cur-year {
-          padding-inline-end: 15px;
+          padding: 0 15px 0 0;
         }
       }
     }

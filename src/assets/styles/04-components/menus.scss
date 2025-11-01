@@ -1,7 +1,7 @@
 
 // Main Menu
 .main-menu > li > a[href*="offer"]{
-  @apply text-danger
+  @apply text-red-800
 }
 
 @media only screen and (min-width: 1024px) {
@@ -57,7 +57,7 @@
     }
 
     .sub-menu {
-      @apply z-20 transition opacity-0 invisible absolute bg-white -translate-y-3 shadow-soft rounded-b-md border-t border-gray-300/30;
+      @apply z-20 transition opacity-0 invisible absolute bg-white -translate-y-3 shadow-default rounded-b-md border-t border-gray-300/30;
 
       .sub-menu {
         top: -1px;
@@ -142,7 +142,8 @@
   }
 
   .mm-spn.mm-spn--light {
-    @apply text-black bg-white;
+    color: #000;
+    background: #ffffff;
   }
 
   .mm-spn {
@@ -178,8 +179,9 @@
 	  }
 
 	  img{
-	      @apply w-12 h-12 object-cover bg-neutral-light pointer-events-none;
-	    }
+		@apply w-12 h-12 object-cover bg-[#f5f7f9] pointer-events-none;
+	  }
+
       a span{
         padding: 0;
       }

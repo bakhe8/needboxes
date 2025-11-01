@@ -67,7 +67,8 @@
       &-icon {
         @apply mb-1;
         i {
-          @apply text-gray-500 text-xl;
+          color: #7c8082;
+          @apply text-xl;
         }
       }
     }
@@ -83,10 +84,10 @@
   @apply duration-500 hover:shadow-default flex-1 bg-white p-8 rounded-md mb-6 md:mb-8 flex flex-col items-center justify-center;
 
   &.sent{
-    @apply text-success font-bold;
+    @apply text-green-500 font-bold;
 
     &:before{
-      @apply w-16 h-16 bg-success-light text-success flex items-center justify-center text-2xl rounded-full mb-2;
+      @apply w-16 h-16 bg-green-100 text-green-500 flex items-center justify-center text-2xl rounded-full mb-2;
       content: "\ea9d";
       font-family: 'sallaicons';
     }

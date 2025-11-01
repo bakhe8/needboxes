@@ -1,10 +1,13 @@
 .virtooal {
-  @apply my-4 rounded-md border border-gray-200 bg-white;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 1px solid rgb(229, 229, 229);
+  background: white;
   @media screen and (min-width: 992px) {
     padding: 18px;
   }
   &--content {
-  @apply flex items-center justify-between;
+  @include flexable(center, space-between, row);
 }
   &--details{
     @include flexable(flex-start, center, column);
@@ -14,11 +17,11 @@
     &--title{
         font-size: 16px;
         font-weight: 700;
-        @apply text-gray-900;
+        color: #1F2937;
     }
     &--desc{
         font-size: 13px;
-        @apply text-gray-500;
+        color: #7C8082;
         font-weight: 400;
     ;
     }

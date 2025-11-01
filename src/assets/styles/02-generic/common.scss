@@ -50,8 +50,8 @@ input[type="number"] {
   border-right-color: var(--color-primary) !important;
 
   &.reverse {
-    border-right-color: var(--accent-coral) !important;
-    background-color: var(--accent-orange-dark);
+    border-right-color: #9f7171 !important;
+    background-color: #f98181;
   }
 }
 
@@ -134,14 +134,14 @@ body {
     border-radius: 50%;
     border: 2px solid;
     border-top-color: var(--color-primary);
-    border-bottom-color: var(--neutral-light);
+    border-bottom-color: #eee;
     border-left-color: var(--color-primary);
-    border-right-color: var(--neutral-light);
+    border-right-color: #eee;
     animation: loader 1s ease-in-out infinite;
 
     .btn--danger & {
-      border-top-color: var(--danger);
-      border-left-color: var(--danger);
+      border-top-color: #ff6767;
+      border-left-color: #ff6767;
     }
   }
 
@@ -286,7 +286,7 @@ salla-modal {
   @apply p-1 min-w-[20px] h-5 rounded-full inline-flex items-center justify-center text-xs;
 
   &--red{
-    @apply bg-danger text-white;
+    @apply bg-red-400 text-white;
   }
 }
 
@@ -309,7 +309,7 @@ salla-modal {
   top: 0.5rem;
   svg {
     max-width: 18px;
-    fill: var(--text-dark);
+    fill: rgba(107,114,128,var(--tw-text-opacity));
   }
 }
 
