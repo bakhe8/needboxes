@@ -20,7 +20,7 @@ _Date: 2025-11-03_
 ## Detailed Checklist
 - [x] Compared `src/views/**` with `base/raed-import` and re-applied only class-level changes.
 - [x] Removed static content blocks introduced during earlier experiments; reinstated component macros.
-- [x] Backed up legacy views in `src/views_backup_2025-11-03/` before remediation.
+- [x] Backed up legacy views (now archived outside the repo; previously `src/views_backup_2025-11-03/`) before remediation.
 - [x] Tokenised palette + typography (`_tokens.scss`, `tailwind.config.js`).
 - [x] Added brand override layer (`06-needsboxes/_brand.scss`) for header, hero, testimonials, and footer.
 - [x] Validated locale keys and replaced inline copy where necessary.
@@ -30,6 +30,7 @@ _Date: 2025-11-03_
 - **Salla data dependencies**: QA must confirm live store blocks (e.g., slider assets) include brand-consistent imagery.
 - **Font delivery**: Google Fonts are imported over HTTPS; ensure CSP permits `fonts.googleapis.com` and `fonts.gstatic.com`.
 - **Performance**: Run Lighthouse after `salla theme preview` to capture CLS/TTI with new shadows and gradients.
+- **Sass modules**: Migrate `src/assets/styles/app.scss` imports to `@use`/`@forward` before Sass 3.0 deprecates `@import`.
 
 ## Approval
 - [x] Ready for QA pass
