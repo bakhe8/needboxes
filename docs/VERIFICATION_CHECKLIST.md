@@ -15,9 +15,9 @@ Use this document before tagging a release or pushing to the live store.
 
 ## Functional QA
 - [x] `salla theme preview` runs without console errors. _Preview link: https://salla.design/dev-mgtzxcqjxhzjvoan (auto-expires as per token)._
-- [ ] Cart flow: add item → cart → checkout → thank you (guest + logged-in if possible).
-- [ ] Account pages (orders, wallet, notifications) load in RTL and LTR.
-- [ ] Search, loyalty, gifting, and cart summary widgets respond with brand styling.
+- [ ] Cart flow: add item → cart → checkout → thank you (guest + logged-in if possible). _Requires manual run-through in live preview._
+- [ ] Account pages (orders, wallet, notifications) load in RTL and LTR. _Validate in preview once credentials are available._
+- [ ] Search, loyalty, gifting, and cart summary widgets respond with brand styling. _Confirm visually during manual QA._
 
 ## Localization
 - [x] AR/EN translations exist for any newly introduced keys.

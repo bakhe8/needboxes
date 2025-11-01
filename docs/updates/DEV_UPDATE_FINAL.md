@@ -13,9 +13,10 @@
 
 ## QA Notes
 - `npm run production` completed (Tailwind plugin + Sass import deprecation warnings recorded).
-- `salla theme preview` executed successfully via https://salla.design/dev-mgtzxcqjxhzjvoan (expires per token); continue manual route verification there.
+- Preview link generated via https://salla.design/dev-mgtzxcqjxhzjvoan (expires per token). Full route verification still pending manual walkthrough.
 - Manual review of store-configured assets recommended to ensure imagery matches new palette.
 
 ## Next Actions
 1. Complete cart/checkout/account walkthrough in the active preview and update verification checklist accordingly.
-2. Monitor for any regressions reported by stakeholders post-preview publish.
+2. Confirm search, loyalty, and gifting widgets reflect brand styling during manual QA.
+3. Monitor for any regressions reported by stakeholders post-preview publish.
