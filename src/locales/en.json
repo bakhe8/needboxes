@@ -34,6 +34,9 @@
     "cart": {
       "cart_options": "Cart Options"
     },
+    "checkout": {
+      "title": "Checkout"
+    },
     "order": {
       "can_edit_or_delete_your_review_within": "You can edit or delete your review within",
       "edit_period_ended": "The period to edit the review has ended",
